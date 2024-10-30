@@ -22,6 +22,7 @@ from . import views
 
 urlpatterns = [
     path("", views.combination_page, name="combination_page"),  # 메인 페이지
+    path("subway/", views.subway_page, name="subway_page"),
     path("save_combination/", views.save_combination, name="save_combination"),  # URL 패턴에 name 추가
     path('admin/', admin.site.urls),
 ]

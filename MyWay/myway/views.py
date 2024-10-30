@@ -5,6 +5,9 @@ import json
 def combination_page(request):
     return render(request, 'save_combination.html')
 
+def subway_page(request):
+    return render(request, 'subway.html')
+
 def save_combination(request):
     if request.method == "POST":
         # JSON 데이터를 파싱하여 가져옵니다.
