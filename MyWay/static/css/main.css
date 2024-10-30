@@ -1,0 +1,87 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+* {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgba(143, 217, 252, 0.32);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 36px;
+    font-size: 16px;
+}
+
+.search-container {
+    border-radius: 10px;
+    background: #FAF7F8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.search-container > input {
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+}
+
+.recommend-container {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.recommend-container span {
+    font-weight: bold;
+}
+
+.recommend-contents {
+    display: flex;
+    overflow-x: scroll;
+    white-space: nowrap;
+    column-gap: 20px;
+}
+
+.recommend-contents::-webkit-scrollbar-thumb {
+    background: #e89a3e; /* 스크롤바 막대 색상 */
+    border: 2px solid #9b6a2f; /* 스크롤바 막대 테두리 설정  */
+    border-radius: 12px 12px 12px 12px;
+}
+
+.recommend-contents::-webkit-scrollbar-track {
+	background: #9b6a2f; /* 스크롤바 뒷 배경 색상 */
+}
+
+.recommend-item {
+    margin-top: 22px;
+    width: 175px;
+    height: 175px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.recommend-item > img {
+    width: 110px;
+    height: 110px;
+}
+
+.recommend-item > p {
+    font-size: 16px;
+    text-align: center;
+}
+
+.recommend-container > button {
+    width: 100%;
+    border-radius: 10px;
+    background: #8FD9FC;
+    padding: 19px;
+    border: 0;
+    margin-top: 68px;
+    font-size: 16px;
+}
+

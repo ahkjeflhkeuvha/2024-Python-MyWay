@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS 파일에 static 태그 추가 -->
+    <link rel="stylesheet" href="{% static 'css/subway.css' %}">
+    <title>Save Combination</title>
+</head>
+<body>
+    <div class="logo-container">
+        <!-- 이미지 파일에 static 태그 추가 -->
+        <img src="{% static 'images/menu.png' %}" alt="Logo">
+    </div>
+
+    <div class="container">
+        <div class="title-container">
+            <p>저장할 조합을 입력하세요</p>
+        </div>
+        
+        <div class="item-container">
+            <div class="item">
+                <label for="name">이름:</label>
+                <input type="text" id="name">
+                
+                <label for="description">설명:</label>
+                <textarea id="description"></textarea>
+
+                <button onclick="saveCombination()">Save Combination</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function saveCombination() {
+            const name = document.getElementById("name").value;
+            const description = document.getElementById("description").value;
+            const data = { name, description };
+    
+            fetch("{% url 'save_combination' %}", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": "{{ csrf_token }}"
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())  // 응답을 JSON 형식으로 변환
+            .then(data => {
+                if (data.status === "success") {
+                    alert(data.message);
+                } else {
+                    alert("저장 실패: " + data.message);
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+    
+</body>
+</html>
