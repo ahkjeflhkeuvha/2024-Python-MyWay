@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="logo-container">
-        <img src="{% static '/images/MyWayYellow.png' %}" alt="">
+        <img src="{% static 'images/MyWayYellow.png' %}" alt="">
     </div>
 
     <div class="container">
@@ -30,39 +30,42 @@
         const itemImg = document.querySelector('.item > img');
         const itemName = document.querySelector('.item > p');
         const pageName = document.querySelector('.title-container > p');
-
-        const titleContainer = document.getElementsByClassName('title-container')[0]
-        const itemContainer = document.getElementsByClassName('item-container')[0]
+        const titleContainer = document.getElementsByClassName('title-container')[0];
+        const itemContainer = document.getElementsByClassName('item-container')[0];
 
         function getData() {
-            const url = './subway.json';
+            const url = "{% static 'json/subway.json' %}";
 
             fetch(url)
-                .then((res) => res.json()) // Call json() here
+                .then((res) => res.json())
                 .then((data) => showData(data))
                 .catch((error) => console.log(error));
         }
 
         function showData(data) {
-            
+            console.log(data);
+        
+            // static 경로를 JavaScript 변수에 저장
+            const staticPath = "{% static '' %}";
+        
             Object.keys(data).forEach((category) => {
                 console.log(category); // 카테고리 이름 출력
                 data[category].forEach((item) => {
                     console.log(item); // 각 아이템 출력
-                    var data = `<div class="item">
-                                    <img src="${item["image"]}" alt="">
-                                    <p>${item["name"]}</p>
-                                </div>`
-
-                    itemContainer.innerHTML += data
-                    itemContainer.innerHTML += data
+        
+                    // staticPath와 이미지 경로를 결합해 src 생성
+                    const dataHTML = `<div class="item">
+                                        <img src="${staticPath}${item["image"]}" alt="">
+                                        <p>${item["name"]}</p>
+                                      </div>`;
+                    itemContainer.innerHTML += dataHTML;
                     pageName.textContent = `${category}`; 
                 });
             });
         }
+        
 
         getData();
-
     </script>
 </body>
 </html>
