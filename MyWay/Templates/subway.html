@@ -26,12 +26,17 @@
         </div>
     </div>
 
+    <button onclick="nextPage()">다음</button>
+
     <script>
         const itemImg = document.querySelector('.item > img');
         const itemName = document.querySelector('.item > p');
         const pageName = document.querySelector('.title-container > p');
         const titleContainer = document.getElementsByClassName('title-container')[0];
         const itemContainer = document.getElementsByClassName('item-container')[0];
+        let i = 0;
+        let keys = [];
+        let menuData = {};
 
         function getData() {
             const url = "{% static 'json/subway.json' %}";
@@ -42,26 +47,35 @@
                 .catch((error) => console.log(error));
         }
 
+        function nextPage(){
+            i++
+            console.log(i)
+            console.log(keys)
+            console.log(menuData)
+            showData(menuData)
+        }
+
         function showData(data) {
-            console.log(data);
+            itemContainer.innerHTML = ""
+            menuData = data
+            Object.keys(data).forEach((category) => {
+                console.log(category)
+                keys.push(category)
+            });
         
             // static 경로를 JavaScript 변수에 저장
             const staticPath = "{% static '' %}";
-        
-            Object.keys(data).forEach((category) => {
-                console.log(category); // 카테고리 이름 출력
-                data[category].forEach((item) => {
-                    console.log(item); // 각 아이템 출력
-        
-                    // staticPath와 이미지 경로를 결합해 src 생성
-                    const dataHTML = `<div class="item">
+
+            data[keys[i]].forEach((item) => {
+                const dataHTML = `<div class="item">
                                         <img src="${staticPath}${item["image"]}" alt="">
                                         <p>${item["name"]}</p>
-                                      </div>`;
-                    itemContainer.innerHTML += dataHTML;
-                    pageName.textContent = `${category}`; 
-                });
-            });
+                                </div>`;
+                itemContainer.innerHTML += dataHTML;
+                pageName.textContent = `${keys[i]}`; 
+            })
+        
+            
         }
         
 
