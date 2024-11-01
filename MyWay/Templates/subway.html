@@ -41,9 +41,11 @@
         let saveCombis = []
         
         function saveCombi(menu) {
-            console.log(menu)
-            saveCombis.push(menu)
+            const imgSrc = menu.querySelector("img").getAttribute("src");
+            const itemName = menu.querySelector("p").textContent;
+            saveCombis.push({ image: imgSrc, name: itemName });
         }
+        
 
         function getData() {
             const url = "{% static 'json/subway.json' %}";
@@ -61,7 +63,11 @@
             console.log(menuData)
             showData(menuData)
 
-            if(i >= 5) saveCombination()
+            if(i >= 5) {
+                saveCombination()
+                console.log("save_combination")
+                i = 0
+            }
         }
 
         function showData(data) {
@@ -89,18 +95,20 @@
 
 
         function saveCombination() {
+            console.log(saveCombis)
             fetch("{% url 'save_combination' %}", {
                 method:"POST",
                 headers : {
                     "Content-Type": "application/json",
                     "X-CSRFToken": "{{ csrf_token }}"
                 },
-                body : JSON.stringify(saveCombis)
+                body : JSON.stringify({"savedCombi" : saveCombis})
             })
             .then(response => response.json())
             .then(data => {
                 if(data.status === "success") {
                     alert(data.message)
+                    window.location.href = "{% url 'result_page' %}";
                 } else {
                     alert("저장 실패 : " + data.message)
                 }

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>결과 페이지</title>
+</head>
+<body>
+    <h1>저장된 조합</h1>
+    <ul>
+        {% for combi in combis.savedCombi %}
+            <li>
+                <img src="{{ combi.image }}" alt="{{ combi.name }}">
+                <p>{{ combi.name }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
