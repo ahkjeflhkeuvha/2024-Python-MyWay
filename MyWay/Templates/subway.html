@@ -37,6 +37,13 @@
         let i = 0;
         let keys = [];
         let menuData = {};
+        
+        let saveCombis = []
+        
+        function saveCombi(menu) {
+            console.log(menu)
+            saveCombis.push(menu)
+        }
 
         function getData() {
             const url = "{% static 'json/subway.json' %}";
@@ -53,6 +60,8 @@
             console.log(keys)
             console.log(menuData)
             showData(menuData)
+
+            if(i >= 5) saveCombination()
         }
 
         function showData(data) {
@@ -67,7 +76,7 @@
             const staticPath = "{% static '' %}";
 
             data[keys[i]].forEach((item) => {
-                const dataHTML = `<div class="item">
+                const dataHTML = `<div class="item" onclick="saveCombi(this)">
                                         <img src="${staticPath}${item["image"]}" alt="">
                                         <p>${item["name"]}</p>
                                 </div>`;
@@ -76,6 +85,27 @@
             })
         
             
+        }
+
+
+        function saveCombination() {
+            fetch("{% url 'save_combination' %}", {
+                method:"POST",
+                headers : {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": "{{ csrf_token }}"
+                },
+                body : JSON.stringify(saveCombis)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.status === "success") {
+                    alert(data.message)
+                } else {
+                    alert("저장 실패 : " + data.message)
+                }
+            })
+            .catch(error => console.error("Error : ", error))
         }
         
 

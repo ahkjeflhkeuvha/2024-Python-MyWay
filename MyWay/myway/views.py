@@ -12,12 +12,13 @@ def save_combination(request):
     if request.method == "POST":
         # JSON 데이터를 파싱하여 가져옵니다.
         data = json.loads(request.body)
-        name = data.get("name", "")
-        description = data.get("description", "")
+        # name = data.get("name", "")
+        # description = data.get("description", "")
+        console.log(data)
 
         # 받아온 데이터 출력 (데이터베이스에 저장 가능)
-        print("Name:", name)
-        print("Description:", description)
+        # print("Name:", name)
+        # print("Description:", description)
 
         return JsonResponse({"status": "success", "message": "조합이 성공적으로 저장되었습니다!"})
 
