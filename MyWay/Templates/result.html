@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="{% static 'css/result.css' %}">
 </head>
 <body>
-    <h1>저장된 조합 : {{ combis.name }}</h1>
+    <div class="logo-container">
+        <img src="{% static 'images/MyWayYellow.png' %}" alt="">
+    </div>
+
+    <div class="title-container">
+        <p>{{ combis.name }}</p>
+        <div></div>
+    </div>
 
     <div class="item-container">
         <!-- 아이템 리스트 표시 -->
@@ -18,5 +25,14 @@
             </div>
         {% endfor %}
     </div>
+
+    <button onclick="saveCombination()">저장하시겠습니까?</button>
+
+    <script>
+        function saveCombination(){
+            console.log("저장하긔~~")
+        }
+
+    </script>
 </body>
 </html>

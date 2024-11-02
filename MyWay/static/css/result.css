@@ -8,11 +8,30 @@
 
 body {
     background: rgba(143, 217, 252, 0.32);
-    padding: 25px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     row-gap: 36px;
     font-size: 16px;
+    justify-content: center;
+
+}
+
+.title-container {
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-container > p {
+    width: fit-content;
+}
+
+.title-container > div {
+    width: 80%;
+    height: 1px;
+    border: 1px solid #FFBB10;
 }
 
 .item-container {
@@ -31,4 +50,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+button {
+    height: 50px;
+    border: 0;
+    background-color: #FFBB10;
+    font-size: 20px;
+    border-radius: 10px;
 }
