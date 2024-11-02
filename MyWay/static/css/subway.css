@@ -59,3 +59,42 @@ button {
     font-size: 20px;
     margin-top: 10px;
 }
+
+.resInput {
+    display: none;
+
+}
+
+.resInput > p {
+    font-style: bold;
+    font-size: 20px;
+}
+
+.resInput > input {
+    width: 250px;
+    height: 40px;
+    padding: 10px;
+    outline: 0;
+    border: 0;
+    border-radius: 10px;
+}
+
+.resInput > button {
+    width: 80%;
+    background-color: white;
+}
+
+.show {
+    position: absolute;
+    background-color: #FFBB10;
+    width: 300px;
+    height: 200px;
+    top: 50%;
+    left: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 25px;
+    border-radius: 20px;
+}
