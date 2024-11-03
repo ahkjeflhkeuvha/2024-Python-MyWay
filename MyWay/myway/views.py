@@ -1,7 +1,30 @@
 import json
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Combination
+from .forms import UserForm  # UserForm 임포트
+from django.contrib.auth import authenticate, login
+
+def signup(request):
+    if request.method == "POST":
+        form = UserForm(request.POST)
+        if form.is_valid():
+            user = form.save()  # 사용자를 데이터베이스에 저장
+            username = form.cleaned_data.get("username")
+            password = form.cleaned_data.get("password1")
+
+            # 사용자 인증
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                # 로그인
+                login(request, user)
+                return redirect("main_page")  # 가입 후 리다이렉트할 페이지
+            else:
+                # 인증 실패 시 처리
+                return render(request, "common/signup.html", {"form": form, "error": "인증 실패"})
+    else:
+        form = UserForm()
+    return render(request, "common/signup.html", {"form": form})
 
 def main_page(request):
     return render(request, 'main_page.html')
