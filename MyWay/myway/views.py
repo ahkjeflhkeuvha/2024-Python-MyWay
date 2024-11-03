@@ -68,3 +68,13 @@ def result_page(request):
     print(saved_combis)
     return render(request, 'result.html', {'combis': saved_combis})
 
+def mypage(request):
+    combinations = list(Combination.objects.all())
+    print(combinations)
+    
+    for combination in combinations:
+        print(combination.menu_name)
+        print(combination.items)
+    
+    return render(request, 'mypage.html', {'combis':combinations})
+
