@@ -21,10 +21,10 @@ def signup(request):
                 return redirect("main_page")  # 가입 후 리다이렉트할 페이지
             else:
                 # 인증 실패 시 처리
-                return render(request, "common/signup.html", {"form": form, "error": "인증 실패"})
+                return render(request, "signup.html", {"form": form, "error": "인증 실패"})
     else:
         form = UserForm()
-    return render(request, "common/signup.html", {"form": form})
+    return render(request, "signup.html", {"form": form})
 
 def main_page(request):
     return render(request, 'main_page.html')
