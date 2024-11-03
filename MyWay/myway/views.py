@@ -3,6 +3,9 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from .models import Combination
 
+def main_page(request):
+    return render(request, 'main_page.html')
+
 def combination_page(request):
     return render(request, 'save_combination.html')
 
