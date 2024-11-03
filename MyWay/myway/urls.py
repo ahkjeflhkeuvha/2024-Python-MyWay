@@ -19,6 +19,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from django.contrib.auth import views as auth_views
+
 
 urlpatterns = [
     path("", views.subway_page, name="subway_page"),  # 메인 페이지 URL 패턴
@@ -26,5 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('result/', views.result_page, name="result_page"),  # 결과 페이지 URL 패턴
     path('save_combinations/', views.save_combinations, name='save_combinations'),
+    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login')
+
 ]
 
