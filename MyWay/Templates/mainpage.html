@@ -1,0 +1,60 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{% static 'css/main.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/mainpage.css' %}">
+    <title>MyWay</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    </style>
+</head>
+
+<body>
+    <div class="logo-container">
+        <img src="{% static 'images/MyWayYellow.png' %}" alt="">
+    </div>
+
+    <section class="search-container">
+        <input type="text" name="query" id="search-bar" placeholder="나의 조합을 검색해 보세요!">
+        <img src="{% static 'images/search.png' %}" alt="">
+    </section>
+
+    <p class="recommend">유진님을 위한 <br> <span class="accent">추천 조합</span> 이에요!</p>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">유진이의 조합</div>
+          <div class="swiper-slide">지은이의 조합</div>
+          <div class="swiper-slide">형주의 조합</div>
+          <div class="swiper-slide">예나의 조합</div>
+          <div class="swiper-slide">서연이의 조합</div>
+          <div class="swiper-slide">진현이의 조합</div>
+          <div class="swiper-slide">가현이의 조합</div>
+          <div class="swiper-slide">써브웨이 조합</div>
+          <div class="swiper-slide">요아정 조합</div>
+        </div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+
+      <div class="Add-menu">나만의 메뉴를 추가할래요! 😉</div>
+
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 2.1,
+            spaceBetween: 10,
+            loop: true,
+            // 가운데로 할지 왼쪽으로 할지 결정
+            // centeredSlides: true,
+          scrollbar: {
+            el: ".swiper-scrollbar",
+            hide: true,
+          },
+        });
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+
+</html>
