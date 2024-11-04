@@ -11,27 +11,94 @@ body {
     padding: 25px;
     display: flex;
     flex-direction: column;
-    row-gap: 36px;
+    row-gap: 12px;
     font-size: 16px;
 }
 
 .title-container {
-    margin: 30px 0;
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-container > p {
+    width: fit-content;
 }
 
 .title-container > div {
-    width: 100%;
+    width: 80%;
+    height: 1px;
     border: 1px solid #FFBB10;
 }
 
 .item-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    row-gap: 20px;
 }
 
 .item-container > .item {
-    width: 170px;
-    height: 170px;
+    width: 90%;
+    aspect-ratio: 1/1;
     background-color: white;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item:hover {
+    background-color: #FFBB10;
+}
+
+button {
+    width: 100%;
+    height: 50px;
+    border: 0;
+    border-radius: 20px;
+    background-color: red;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.resInput {
+    display: none;
+
+}
+
+.resInput > p {
+    font-style: bold;
+    font-size: 20px;
+}
+
+.resInput > input {
+    width: 250px;
+    height: 40px;
+    padding: 10px;
+    outline: 0;
+    border: 0;
+    border-radius: 10px;
+}
+
+.resInput > button {
+    width: 80%;
+    background-color: white;
+}
+
+.show {
+    position: absolute;
+    background-color: #FFBB10;
+    width: 300px;
+    height: 200px;
+    top: 50%;
+    left: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 25px;
+    border-radius: 20px;
 }

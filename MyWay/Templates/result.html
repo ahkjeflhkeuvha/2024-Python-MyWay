@@ -1,0 +1,73 @@
+{% load static %}
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>결과 페이지</title>
+    <link rel="stylesheet" href="{% static 'css/result.css' %}">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="{% static 'images/MyWayYellow.png' %}" alt="">
+    </div>
+
+    <div class="title-container">
+        <p>{{ combis.name }}</p>
+        <div></div>
+    </div>
+
+    <div class="item-container">
+        <!-- 아이템 리스트 표시 -->
+        {% for combi in combis.items %}
+            <div class="item">
+                <img src="{{ combi.image }}" alt="{{ combi.name }}">
+                <p>{{ combi.name }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <button onclick="saveCombination()">저장하시겠습니까?</button>
+
+    <script>
+        function saveCombination() {
+            // 사용자의 이름과 메뉴 이름 및 아이템 데이터 가져오기
+            const userName = "사용자 이름"; // 여기에 사용자 이름을 동적으로 가져오도록 설정
+            const menuName = document.querySelector('.title-container > p').textContent;
+            const items = [];
+        
+            document.querySelectorAll('.item').forEach(item => {
+                const image = item.querySelector('img').getAttribute('src');
+                const name = item.querySelector('p').textContent;
+                items.push({ image: image, name: name });
+            });
+
+            console.log(items)
+        
+            // 서버로 데이터 전송
+            fetch("{% url 'save_combinations' %}", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": "{{ csrf_token }}"
+                },
+                body: JSON.stringify({
+                    user_name: userName,
+                    menu_name: menuName,
+                    items: items
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    alert(data.message);
+                    // 저장 후 다른 페이지로 이동하거나 작업 수행
+                } else {
+                    alert("저장 실패: " + data.message);
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        }
+        
+
+    </script>
+</body>
+</html>

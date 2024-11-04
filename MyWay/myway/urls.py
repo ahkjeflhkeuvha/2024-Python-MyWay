@@ -19,10 +19,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from django.contrib.auth import views as auth_views
+
 
 urlpatterns = [
-    path("", views.combination_page, name="combination_page"),  # 메인 페이지
-    path("save_combination/", views.save_combination, name="save_combination"),  # URL 패턴에 name 추가
+    path("main/", views.main_page, name="main_page"),
+    path("subway/", views.subway_page, name="subway_page"),  # 메인 페이지 URL 패턴
+    path("save_combination/", views.save_combination, name="save_combination"),  # 조합 저장 URL 패턴
     path('admin/', admin.site.urls),
+    path('result/', views.result_page, name="result_page"),  # 결과 페이지 URL 패턴
+    path('save_combinations/', views.save_combinations, name='save_combinations'),
+    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name="logout"),
+    path('signup/', views.signup, name="signup"),
+    path('mypage/', views.mypage, name="mypage")
+
 ]
 

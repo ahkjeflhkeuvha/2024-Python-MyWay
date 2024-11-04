@@ -1,0 +1,169 @@
+body {
+    background: rgba(143, 217, 252, 0.32);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 36px;
+    font-size: 16px;
+}
+
+.search-container {
+    border-radius: 10px;
+    background: #FAF7F8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.search-container>input {
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+}
+
+.recommend-container {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.recommend-container span {
+    font-weight: bold;
+}
+
+.recommend-contents {
+    display: flex;
+    overflow-x: scroll;
+    white-space: nowrap;
+    column-gap: 20px;
+}
+
+.recommend-contents::-webkit-scrollbar-thumb {
+    background: #e89a3e;
+    /* 스크롤바 막대 색상 */
+    border: 2px solid #9b6a2f;
+    /* 스크롤바 막대 테두리 설정  */
+    border-radius: 12px 12px 12px 12px;
+}
+
+.recommend-contents::-webkit-scrollbar-track {
+    background: #9b6a2f;
+    /* 스크롤바 뒷 배경 색상 */
+}
+
+.recommend-item {
+    margin-top: 22px;
+    width: 175px;
+    height: 175px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.recommend-item>img {
+    width: 110px;
+    height: 110px;
+}
+
+.recommend-item>p {
+    font-size: 16px;
+    text-align: center;
+}
+
+.recommend-container>button {
+    width: 100%;
+    border-radius: 10px;
+    background: #8FD9FC;
+    padding: 19px;
+    border: 0;
+    margin-top: 68px;
+    font-size: 16px;
+}
+
+
+/* 유진 코드 시작 */
+
+.recommend {
+    color: #000;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 4px;
+}
+
+.accent {
+    color: #000;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrap {
+    width: 100%;
+    max-height: 220px;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    background: linear-gradient(45deg, #ac8bef, #2ddbdc);
+}
+
+.swiper {
+    width: 100%;
+    max-height: 220px;
+    height: 100%;
+}
+
+.swiper-slide {
+    width: 160px;
+    height: 175px;
+    border-radius: 8px;
+    background: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Add-menu {
+    width: 362px;
+    height: 60px;
+    border-radius: 4px;
+    background: #8FD9FC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 스크롤 바 */
+.swiper-scrollbar {
+    background: rgba(217, 217, 217, 0.50); 
+    border-radius: 10px; 
+    height: 8px; 
+}
+
+.swiper-scrollbar .swiper-scrollbar-drag {
+    background: #8FD9FC; 
+    border-radius: 10px;
+}
+

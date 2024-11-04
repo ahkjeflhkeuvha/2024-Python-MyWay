@@ -1,0 +1,58 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/mypage.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="{% static 'images/MyWayYellow.png' %}" alt="">
+    </div>
+
+    <div class="container">
+        <div class="title-container">
+            <p></p>
+            <div></div>
+        </div>
+    </div>
+    
+    <div class="item-container">
+        <!-- 아이템 리스트 표시 -->
+        {% for combination in combis %}
+        <div class="item">
+            <p>{{combination.menu_name}}</p>
+            <img src="{{ combination.items.0.image}}" alt="{{ combination.menu_name}}">
+        </div>
+            
+        {% endfor %}
+    </div>
+
+    <script>
+        function showCombination() {
+            fetch("{% url 'mypage' %}", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": "{{ csrf_token }}"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    alert(data.message);
+                    window.location.href = "{% url 'result_page' %}";
+                } else {
+                    alert("저장 실패 : " + data.message);
+                }
+            })
+            .catch(error => console.error("Error : ", error));
+        }
+        
+        // 초기 데이터 가져오기
+        showCombination()
+        
+    </script>
+</body>
+</html>

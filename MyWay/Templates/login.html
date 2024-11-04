@@ -1,0 +1,18 @@
+{% block content %}
+
+<h1>로그인</h1>
+<form method="post" action="{% url 'login' %}">  <!-- 'users:login'에서 'login'으로 수정 필요할 수도 있음 -->
+  {% csrf_token %}
+  {% include 'form_errors.html' %}
+  <div>
+    <label>사용자 ID</label>
+    <input type="text" name="username" id="username">
+  </div>
+  <div>
+    <label>비밀번호</label>
+    <input type="password" name="password" id="password">  <!-- type을 'password'로 수정 -->
+  </div>
+  <button type="submit">로그인</button>
+</form>
+
+{% endblock %}
