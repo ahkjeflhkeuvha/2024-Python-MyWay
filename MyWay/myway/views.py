@@ -27,7 +27,7 @@ def signup(request):
     return render(request, "signup.html", {"form": form})
 
 def main_page(request):
-    return render(request, 'main_page.html')
+    return render(request, 'mainpage.html')
 
 def combination_page(request):
     return render(request, 'save_combination.html')
