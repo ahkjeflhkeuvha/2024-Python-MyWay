@@ -2,223 +2,219 @@
     "메뉴": [
         {
             "name": "안창비프",
-            "image": "Anchang-Beef.png"
+            "image": "images/Anchang-Beef.png"
         },
         {
             "name": "스테이크&치즈",
-            "image": "Steak-&-Cheese.png"
+            "image": "images/Steak-&-Cheese.png"
         },
         {
             "name": "쉬림프",
-            "image": "Shrimp.png"
+            "image": "images/Shrimp.png"
         },
         {
             "name": "K-바베큐",
-            "image": "K-BBQ.png"
+            "image": "images/K-BBQ.png"
         },
         {
             "name": "치킨 데이야끼",
-            "image": "Chicken-Teriyaki.png"
+            "image": "images/Chicken-Teriyaki.png"
         },
         {
             "name": "비엘티",
-            "image": "B.L.T.png"
+            "image": "images/B.L.T.png"
         },
         {
             "name": "햄",
-            "image": "Ham.png"
-        },
-        {
-            "name": "프라이드 치킨",
-            "image": "images/image 46.png"
+            "image": "images/Ham.png"
         },
         {
             "name": "치킨 베이컨 아보카도",
-            "image": "ChickenBaconAvocado.png"
+            "image": "images/ChickenBaconAvocado.png"
         },
         {
             "name": "스파이시 쉬림프",
-            "image": "Spicy_Shrimp.png"
+            "image": "images/Spicy_Shrimp.png"
         },
         {
             "name": "로스트 치킨",
-            "image": "Roasted-Chicken.png"
+            "image": "images/Roasted-Chicken.png"
         },
         {
             "name": "로티세리 바베큐 치킨킨",
-            "image": "Rotisserie-Barbecue-Chicken.png"
+            "image": "images/Rotisserie-Barbecue-Chicken.png"
         },
         {
             "name": "폴드 포크 바베큐",
-            "image": "Pulled-Pork-cheese.png"
+            "image": "images/Pulled-Pork-cheese.png"
         },
         {
             "name": "써브웨이 클럽",
-            "image": "Subway-Club.png"
+            "image": "images/Subway-Club.png"
         },
         {
             "name": "스파이시 이탈리안",
-            "image": "spicy_italian.png"
+            "image": "images/spicy_italian.png"
         },
         {
             "name": "이탈리안 비엠티",
-            "image": "Italian_B.M.T.png"
+            "image": "images/Italian_B.M.T.png"
         },
         {
             "name": "치킨 슬라이스",
-            "image": "Chicken-Slice.png"
+            "image": "images/Chicken-Slice.png"
         },
         {
             "name": "참치",
-            "image": "Tuna.png"
+            "image": "images/Tuna.png"
         },
         {
             "name": "에그마요",
-            "image": "Egg-Mayo.png"
+            "image": "images/Egg-Mayo.png"
         },
         {
             "name": "베지",
-            "image": "Veggie-Delite.png"
+            "image": "images/Veggie-Delite.png"
         },
         {
             "name": "머쉬룸",
-            "image": "Mushroom.png"
+            "image": "images/Mushroom.png"
         }
     ],
     "빵": [
         {
             "name": "화이트",
-            "image": "White.png"
+            "image": "images/White.png"
         },
         {
             "name": "위트",
-            "image": "Wit.png"
+            "image": "images/Wit.png"
         },
         {
             "name": "허니오트",
-            "image": "Honey-Oat.png"
+            "image": "images/Honey-Oat.png"
         },
         {
             "name": "하티",
-            "image": "Hearty.png"
+            "image": "images/Hearty.png"
         },
         {
             "name": "파마산 오레가노",
-            "image": "Parmesan-Oregano.png"
+            "image": "images/Parmesan-Oregano.png"
         },
         {
             "name": "플랫브레드",
-            "image": "Flatbread.png"
+            "image": "images/Flatbread.png"
         }
     ],
     "치즈": [
         {
             "name": "아메리칸 치즈",
-            "image": "American-Cheese.png"
+            "image": "images/American-Cheese.png"
         },
         {
             "name": "모짜렐라 치즈",
-            "image": "Mozzarella-Cheese.png"
+            "image": "images/Mozzarella-Cheese.png"
         },
         {
             "name": "슈레드 치즈",
-            "image": "Shredded-Cheese.png"
+            "image": "images/Shredded-Cheese.png"
         }
     ],
     "야채": [
         {
             "name": "양상추",
-            "image": "Lettuce.png"
+            "image": "images/Lettuce.png"
         },
         {
             "name": "토마토",
-            "image": "tomato.png"
+            "image": "images/tomato.png"
         },
         {
             "name": "양파",
-            "image": "onion.png"
+            "image": "images/onion.png"
         },
         {
             "name": "오이",
-            "image": "cucumber.png"
+            "image": "images/cucumber.png"
         },
         {
             "name": "피망",
-            "image": "pimento.png"
+            "image": "images/pimento.png"
         },
         {
             "name": "피클",
-            "image": "Pickle.png"
+            "image": "images/Pickle.png"
         },
         {
             "name": "올리브",
-            "image": "olive.png"
+            "image": "images/olive.png"
         },
         {
             "name": "할라피뇨",
-            "image": "Jalapeno.png"
+            "image": "images/Jalapeno.png"
         },
         {
             "name": "아보카도",
-            "image": "avocado.png"
+            "image": "images/avocado.png"
         }
     ],
     "소스": [
         {
             "name": "랜치",
-            "image": "Ranch.png"
+            "image": "images/Ranch.png"
         },
         {
             "name": "마요네즈",
-            "image": "mayonnaise.png"
+            "image": "images/mayonnaise.png"
         },
         {
             "name": "머스터드",
-            "image": "Mustard.png"
+            "image": "images/Mustard.png"
         },
         {
             "name": "스모크 바베큐",
-            "image": "Smoked-BBQ.png"
+            "image": "images/Smoked-BBQ.png"
         },
         {
             "name": "스위트 칠리 소스",
-            "image": "Sweet-Chili.png"
+            "image": "images/Sweet-Chili.png"
         },
         {
             "name": "스위트 어니언",
-            "image": "Sweet-Onion.png"
+            "image": "images/Sweet-Onion.png"
         },
         {
             "name": "핫 칠리",
-            "image": "Hot-Chili.png"
+            "image": "images/Hot-Chili.png"
         },
         {
             "name": "허니머스타드",
-            "image": "Honey-Mustard.png"
+            "image": "images/Honey-Mustard.png"
         },
         {
             "name": "사우스웨스트 치폴레",
-            "image": "Southwest-Chipotle.png"
+            "image": "images/Southwest-Chipotle.png"
         },
         {
             "name": "홀스래디쉬",
-            "image": "Horseradish.png"
+            "image": "images/Horseradish.png"
         },
         {
             "name": "엑스트라 버진 올리브 오일",
-            "image": "Extra-Virgin-Olive-Oil.png"
+            "image": "images/Extra-Virgin-Olive-Oil.png"
         },
         {
             "name": "레드 와인 식초",
-            "image": "Redwine-vinegar.png"
+            "image": "images/Redwine-vinegar.png"
         },
         {
             "name": "소금",
-            "image": "salt.png"
+            "image": "images/salt.png"
         },
         {
             "name": "후추",
-            "image": "pepper.png"
+            "image": "images/pepper.png"
         }
     ]
 }
