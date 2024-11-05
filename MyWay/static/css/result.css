@@ -42,7 +42,7 @@ body {
 }
 
 .item-container > .item {
-    width: 90%;
+    width: 200px;
     aspect-ratio: 1/1;
     background-color: white;
     border-radius: 8px;
@@ -50,6 +50,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.item > img {
+    width: 150px;
+    height: 150px;
 }
 
 button {

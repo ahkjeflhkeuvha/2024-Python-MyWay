@@ -93,6 +93,10 @@ body {
     margin: 4px;
 }
 
+.logo-container {
+    margin-top: 5px;
+}
+
 .accent {
     color: #000;
     font-family: Inter;
