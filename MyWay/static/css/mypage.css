@@ -75,6 +75,10 @@ body {
     grid-template-columns: repeat(2, 1fr);
 }
 
+.popupItem {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .popup img {
     width: 150px;
     height: 150px;

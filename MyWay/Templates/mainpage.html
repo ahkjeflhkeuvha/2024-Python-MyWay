@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="{% static 'css/mainpage.css' %}">
     <title>MyWay</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    </style>
 </head>
 
 <body>
@@ -24,36 +23,65 @@
 
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">유진이의 조합</div>
-          <div class="swiper-slide">지은이의 조합</div>
-          <div class="swiper-slide">형주의 조합</div>
-          <div class="swiper-slide">예나의 조합</div>
-          <div class="swiper-slide">서연이의 조합</div>
-          <div class="swiper-slide">진현이의 조합</div>
-          <div class="swiper-slide">가현이의 조합</div>
-          <div class="swiper-slide">써브웨이 조합</div>
-          <div class="swiper-slide">요아정 조합</div>
+            {% for combination in combis %}
+            <div class="swiper-slide item" onclick="openPopup({{ combination.items|safe }})">
+                <p>{{ combination.menu_name }}</p>
+                <img src="{{ combination.items.0.image }}" alt="{{ combination.menu_name }}">
+            </div>
+            {% endfor %}
         </div>
         <div class="swiper-scrollbar"></div>
-      </div>
+    </div>
 
-      <div class="Add-menu">나만의 메뉴를 추가할래요! 😉</div>
+    <div class="Add-menu" onclick="choicePage()">나만의 메뉴를 추가할래요! 😉</div>
 
-      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-      <script>
+    <!-- 팝업 -->
+    <div class="popup" id="popup" style="display: none;">
+        <div class="popup-content">
+          <div id="popup-items"></div>
+          <span class="close-btn" onclick="closePopup()">&times;</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 2.2,
             spaceBetween: 10,
             loop: true,
-            // 가운데로 할지 왼쪽으로 할지 결정
-            // centeredSlides: true,
-          scrollbar: {
-            el: ".swiper-scrollbar",
-            hide: true,
-          },
+            scrollbar: {
+                el: ".swiper-scrollbar",
+                hide: true,
+            },
         });
-  </script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        function choicePage() {
+            window.location.href = "{% url 'choice_page' %}";
+        }
+
+        // 팝업 열기
+        function openPopup(items) {
+            const popup = document.getElementById("popup");
+            const popupItemsContainer = document.getElementById("popup-items");
+            popupItemsContainer.innerHTML = ""; // 초기화
+
+            items.forEach(item => {
+                const itemElement = document.createElement("div");
+                itemElement.classList.add("popupItem");
+                itemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <p>${item.name}</p>
+                `;
+                popupItemsContainer.appendChild(itemElement);
+            });
+
+            popup.style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+      </script>
 </body>
 
 </html>

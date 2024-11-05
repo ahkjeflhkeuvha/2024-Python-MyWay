@@ -26,14 +26,14 @@ def signup(request):
         form = UserForm()
     return render(request, "signup.html", {"form": form})
 
-def main_page(request):
-    return render(request, 'mainpage.html')
-
 def combination_page(request):
     return render(request, 'save_combination.html')
 
 def subway_page(request):
     return render(request, 'subway.html')
+
+def choice_page(request):
+    return render(request, 'choice.html')
 
 def save_combinations(request):
     if request.method == "POST":
@@ -77,4 +77,16 @@ def mypage(request):
         print(combination.items)
     
     return render(request, 'mypage.html', {'combis':combinations})
+
+from django.shortcuts import render
+
+def main_page(request):
+    combinations = list(Combination.objects.all())
+    
+    for combination in combinations:
+        print(combination.menu_name)
+        print(combination.items)
+    
+    # 템플릿 렌더링
+    return render(request, 'mainpage.html', {'combis': combinations})
 
