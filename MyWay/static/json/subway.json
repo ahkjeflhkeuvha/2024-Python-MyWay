@@ -84,137 +84,137 @@
     "빵": [
         {
             "name": "화이트",
-            "image": "images/White.png"
+            "image": "images/White.jpg"
         },
         {
             "name": "위트",
-            "image": "images/Wit.png"
+            "image": "images/Wit.jpg"
         },
         {
             "name": "허니오트",
-            "image": "images/Honey-Oat.png"
+            "image": "images/Honey-Oat.jpg"
         },
         {
             "name": "하티",
-            "image": "images/Hearty.png"
+            "image": "images/Hearty.jpg"
         },
         {
             "name": "파마산 오레가노",
-            "image": "images/Parmesan-Oregano.png"
+            "image": "images/Parmesan-Oregano.jpg"
         },
         {
             "name": "플랫브레드",
-            "image": "images/Flatbread.png"
+            "image": "images/Flatbread.jpg"
         }
     ],
     "치즈": [
         {
             "name": "아메리칸 치즈",
-            "image": "images/American-Cheese.png"
+            "image": "images/American-Cheese.jpg"
         },
         {
             "name": "모짜렐라 치즈",
-            "image": "images/Mozzarella-Cheese.png"
+            "image": "images/Mozzarella-Cheese.jpg"
         },
         {
             "name": "슈레드 치즈",
-            "image": "images/Shredded-Cheese.png"
+            "image": "images/Shredded-Cheese.jpg"
         }
     ],
     "야채": [
         {
             "name": "양상추",
-            "image": "images/Lettuce.png"
+            "image": "images/Lettuce.jpg"
         },
         {
             "name": "토마토",
-            "image": "images/tomato.png"
+            "image": "images/tomato.jpg"
         },
         {
             "name": "양파",
-            "image": "images/onion.png"
+            "image": "images/onion.jpg"
         },
         {
             "name": "오이",
-            "image": "images/cucumber.png"
+            "image": "images/cucumber.jpg"
         },
         {
             "name": "피망",
-            "image": "images/pimento.png"
+            "image": "images/pimento.jpg"
         },
         {
             "name": "피클",
-            "image": "images/Pickle.png"
+            "image": "images/Pickle.jpg"
         },
         {
             "name": "올리브",
-            "image": "images/olive.png"
+            "image": "images/olive.jpg"
         },
         {
             "name": "할라피뇨",
-            "image": "images/Jalapeno.png"
+            "image": "images/Jalapeno.jpg"
         },
         {
             "name": "아보카도",
-            "image": "images/avocado.png"
+            "image": "images/avocado.jpg"
         }
     ],
     "소스": [
         {
             "name": "랜치",
-            "image": "images/Ranch.png"
+            "image": "images/Ranch.jpg"
         },
         {
             "name": "마요네즈",
-            "image": "images/mayonnaise.png"
+            "image": "images/mayonnaise.jpg"
         },
         {
             "name": "머스터드",
-            "image": "images/Mustard.png"
+            "image": "images/Mustard.jpg"
         },
         {
             "name": "스모크 바베큐",
-            "image": "images/Smoked-BBQ.png"
+            "image": "images/Smoked-BBQ.jpg"
         },
         {
             "name": "스위트 칠리 소스",
-            "image": "images/Sweet-Chili.png"
+            "image": "images/Sweet-Chili.jpg"
         },
         {
             "name": "스위트 어니언",
-            "image": "images/Sweet-Onion.png"
+            "image": "images/Sweet-Onion.jpg"
         },
         {
             "name": "핫 칠리",
-            "image": "images/Hot-Chili.png"
+            "image": "images/Hot-Chili.jpg"
         },
         {
             "name": "허니머스타드",
-            "image": "images/Honey-Mustard.png"
+            "image": "images/Honey-Mustard.jpg"
         },
         {
             "name": "사우스웨스트 치폴레",
-            "image": "images/Southwest-Chipotle.png"
+            "image": "images/Southwest-Chipotle.jpg"
         },
         {
             "name": "홀스래디쉬",
-            "image": "images/Horseradish.png"
+            "image": "images/Horseradish.jpg"
         },
         {
             "name": "엑스트라 버진 올리브 오일",
-            "image": "images/Extra-Virgin-Olive-Oil.png"
+            "image": "images/Extra-Virgin-Olive-Oil.jpg"
         },
         {
             "name": "레드 와인 식초",
-            "image": "images/Redwine-vinegar.png"
+            "image": "images/Redwine-vinegar.jpg"
         },
         {
             "name": "소금",
-            "image": "images/salt.png"
+            "image": "images/salt.jpg"
         },
         {
             "name": "후추",
-            "image": "images/pepper.png"
+            "image": "images/pepper.jpg"
         }
     ]
 }

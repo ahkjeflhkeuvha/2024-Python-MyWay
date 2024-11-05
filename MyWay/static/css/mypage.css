@@ -49,3 +49,23 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.popup {
+    /* display: none; */
+    position: fixed;
+    top: 50%; /* 중앙 위치 설정 */
+    left: 50%; /* 중앙 위치 설정 */
+    transform: translate(-50%, -50%); /* 화면 중앙에 배치 */
+    flex-direction: column;
+    width: 90%;
+    max-width: 1000px;
+    height: calc(590px + 55px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    z-index: 20;
+    border-radius: 10px;
+    background-color: #fff;
+    row-gap: 10px;
+    padding: 20px;
+}
+
