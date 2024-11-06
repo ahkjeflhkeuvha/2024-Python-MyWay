@@ -2,105 +2,105 @@
     "토핑": [
         {
             "name": "밀크폼",
-            "image": "Milk_Foam.png"
+            "image": "images/Milk_Foam.png"
         },
         {
             "name": "타피오카 펄",
-            "image": "Pearl.png"
+            "image": "images/Pearl.png"
         },
         {
             "name": "코코넛",
-            "image": "Coconut.png"
+            "image": "images/Coconut.png"
         },
         {
             "name": "알로애",
-            "image": "Aloe.png"
+            "image": "images/Aloe.png"
         },
         {
             "name": "화이트펄",
-            "image": "White_Pearl.png"
+            "image": "images/White_Pearl.png"
         },
         {
             "name": "치즈폼",
-            "image": "Cheese_Foam.png"
+            "image": "images/Cheese_Foam.png"
         }
     ],
     "스무디": [
         {
             "name": "밀크 쿠앤크 스무디",
-            "image": "Milk_Cookie_Smoothie.jpg"
+            "image": "images/Milk_Cookie_Smoothie.jpg"
         },
         {
             "name": "브라운슈가 쥬얼리 치즈폼 스무디",
-            "image": "Brown_Sugar_Jewellery_Cheese_Foam_Smoothie.jpg"
+            "image": "images/Brown_Sugar_Jewellery_Cheese_Foam_Smoothie.jpg"
         },
         {
             "name": "딸기 쿠키 스무디",
-            "image": "Strawberry_Cookie_Smoothie.jpg"
+            "image": "images/Strawberry_Cookie_Smoothie.jpg"
         },
         {
             "name": "초코멜로 스무디",
-            "image": "Chocolate_Melon_Smoothie.jpg"
+            "image": "images/Chocolate_Melon_Smoothie.jpg"
         },
         {
             "name": "제주 그린 스무디",
-            "image": "Jeju_Green_Smoothie.jpg"
+            "image": "images/Jeju_Green_Smoothie.jpg"
         },
         {
             "name": "청포도 스무디",
-            "image": "Green_Grape_Smoothie.jpg"
+            "image": "images/Green_Grape_Smoothie.jpg"
         },
         {
             "name": "망고 스무디",
-            "image": "Mango_Smoothie.jpg"
+            "image": "images/Mango_Smoothie.jpg"
         },
         {
             "name": "카페 스무디 with 블랙티",
-            "image": "Cafe_Smoothie_with_Black_Tea.jpg"
+            "image": "images/Cafe_Smoothie_with_Black_Tea.jpg"
         },
         {
             "name": "초콜렛 쿠키&크림 스무디",
-            "image": "Chocolate_Cookies_Cream_Smoothie.jpg"
+            "image": "images/Chocolate_Cookies_Cream_Smoothie.jpg"
         },
         {
             "name": "딸기 쥬얼리 요구르트 크러쉬",
-            "image": "Strawberry_Jewelry_Yogurt_Crush.jpg"
+            "image": "images/Strawberry_Jewelry_Yogurt_Crush.jpg"
         },
         {
             "name": "미니펄 트리플 딸기 크러쉬",
-            "image": "Mini_Pearl_Triple_Strawberry_Crush.jpg"
+            "image": "images/Mini_Pearl_Triple_Strawberry_Crush.jpg"
         },
         {
             "name": "코코넛 밀크 스무디 + 펄",
-            "image": "Coconut_Milk_Smoothie_Pearls.jpg"
+            "image": "images/Coconut_Milk_Smoothie_Pearls.jpg"
         },
         {
             "name": "미니펄 트리플 망고 크러쉬",
-            "image": "Mini_Pearl_Triple_Mango_Crush.jpg"
+            "image": "images/Mini_Pearl_Triple_Mango_Crush.jpg"
         },
         {
             "name": "초코바른 제주 그린 스무디",
-            "image": "Jeju_Green_Smoothie_with_Chocolate.jpg"
+            "image": "images/Jeju_Green_Smoothie_with_Chocolate.jpg"
         },
         {
             "name": "파인애플 코코넛 스무디",
-            "image": "Pineapple_Coconut_Smoothie.jpg"
+            "image": "images/Pineapple_Coconut_Smoothie.jpg"
         },
         {
             "name": "초코바른 초코 스무디",
-            "image": "Chocolate_covered_chocolate_smoothie.jpg"
+            "image": "images/Chocolate_covered_chocolate_smoothie.jpg"
         },
         {
             "name": "타로 스무디",
-            "image": "Taro_Smoothie.jpg"
+            "image": "images/Taro_Smoothie.jpg"
         },
         {
             "name": "초코바른 피스타치오 스무디",
-            "image": "Chocolate-covered_pistachio_smoothie.jpg"
+            "image": "images/Chocolate-covered_pistachio_smoothie.jpg"
         },
         {
             "name": "레몬 요구르트 스무디",
-            "image": "Lemon_Yogurt_Smoothie.jpg"
+            "image": "images/Lemon_Yogurt_Smoothie.jpg"
         }
     ]
     
