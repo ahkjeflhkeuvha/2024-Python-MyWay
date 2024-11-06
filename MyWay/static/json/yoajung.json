@@ -2,139 +2,139 @@
     "토핑": [
         {
             "name": "요거트아이스크림",
-            "image": "Yogurt ice cream.png"
+            "image": "images/Yogurticecream.png"
         },
         {
             "name": "초코쉘",
-            "image": "Chocolate shell.png"
+            "image": "images/Chocolateshell.png"
         },
         {
             "name": "체리쉘",
-            "image": "Cherry shell.png"
+            "image": "images/Cherryshell.png"
         },
         {
             "name": "초코링",
-            "image": "Choco Ring.png"
+            "image": "images/ChocoRing.png"
         },
         {
             "name": "딸기",
-            "image": "strawberry.png"
+            "image": "images/strawberry.png"
         },
         {
             "name": "망고",
-            "image": "mango.png"
+            "image": "images/mango.png"
         },
         {
             "name": "메론+치즈큐브",
-            "image": "Melon + Cheese Cube.png"
+            "image": "images/Melon_Cheese_Cube.png"
         },
         {
             "name": "그래놀라+벌집꿀",
-            "image": "Granola + Honeycomb.png"
+            "image": "images/Granola_Honeycomb.png"
         },
         {
             "name": "샤인머스캣",
-            "image": "Shine Muscat.png"
+            "image": "images/ShineMuscat.png"
         },
         {
             "name": "딸기+그래놀라+벌집",
-            "image": "Strawberry + Granola + Honeycomb.png"
+            "image": "images/Strawberry_Granola_Honeycomb.png"
         },
         {
             "name": "그래놀라+벌집꿀+치즈케이크",
-            "image": "Granola + Honeycomb + Cheesecake.png"
+            "image": "images/Granola_Honeycomb_Cheesecake.png"
         },
         {
             "name": "블루베리+그래놀라+벌집꿀",
-            "image": "Blueberries + Granola + Honeycomb.png"
+            "image": "images/Blueberries_Granola_Honeycomb.png"
         },
         {
             "name": "말린샤인머스캣+벌집꿀",
-            "image": "Dried Shine Muscat + Honeycomb.png"
+            "image": "images/DriedShineMuscat_Honeycomb.png"
         },
         {
             "name": "메론+그래놀라+벌집꿀",
-            "image": "Melon + Granola + Honeycomb.png"
+            "image": "images/Melon_Granola_Honeycomb.png"
         },
         {
             "name": "샤인머스캣+후루츠링+벌집꿀",
-            "image": "Shine Muscat + Fruit Ring + Honeycomb.png"
+            "image": "images/ShineMuscat_FruitRing_Honeycomb.png"
         },
         {
             "name": "파인애플+키위+벌집꿀",
-            "image": "Pineapple + Kiwi + Honeycomb.png"
+            "image": "images/Pineapple_Kiwi_Honeycomb.png"
         },
         {
             "name": "자몽+후루츠링+벌집꿀",
-            "image": "Grapefruit + Fruit Ring + Honeycomb.png"
+            "image": "images/Grapefruit_FruitRing_Honeycomb.png"
         },
         {
             "name": "바나나+초코링+아몬드",
-            "image": "Banana + chocolate ring + almond.png"
+            "image": "images/Banana_chocolatering_almond.png"
         },
         {
             "name": "오렌지+자몽+벌집꿀",
-            "image": "Orange + Grapefruit + Honeycomb.png"
+            "image": "images/Orange_Grapefruit_Honeycomb.png"
         },
         {
             "name": "딸기+바나나+오레오크럼블",
-            "image": "Strawberry + Banana + Oreo Crumble.png"
+            "image": "images/Strawberry_BananaOreoCrumble.png"
         },
         {
             "name": "딸기+초코쉘+치즈큐브",
-            "image": "Strawberry + Chocolate Shell + Cheese Cube.png"
+            "image": "images/Strawberry_ChocolateShell_Cheese_Cube.png"
         },
         {
             "name": "딸기+그래놀라+벌집꿀+달고나크럼블+연",
-            "image": "Strawberry + Granola + Honeycomb + Dalgona Crumble + Lotus.png"
+            "image": "images/Strawberry_Granola_Honeycomb_Dalgona_Crumble_Lotus.png"
         },
         {
             "name": "망고+블루베리+치즈큐브",
-            "image": "Mango + Blueberry + Cheese Cube.png"
+            "image": "images/Mango_Blueberry_Cheese_Cube.png"
         },
         {
             "name": "바나나+초코쉘+그래놀라",
-            "image": "Banana + Chocolate Shell + Granola.png"
+            "image": "images/Banana_ChocolateShell_Granola.png"
         },
         {
             "name": "오레오+오레오시리얼+연유",
-            "image": "Oreo + Oreo cereal + condensed milk.png"
+            "image": "images/Oreo_Oreocereal_condensed_milk.png"
         },
         {
             "name": "오레오+오레오크럼블+몰티져스",
-            "image": "Oreo + Oreo Crumble + Maltesers.png"
+            "image": "images/OreoOreo_Crumble_Maltesers.png"
         },
         {
             "name": "바나나+블루베리+초코쉘+그래놀라",
-            "image": "Banana + Blueberry + Chocolate Shell + Granola.png"
+            "image": "images/Banana_Blueberry_ChocolateShell_Granola.png"
         },
         {
             "name": "바나나시리얼 세트",
-            "image": "Banana Cereal Set.png"
+            "image": "images/Banana_Cereal_Set.png"
         },
         {
             "name": "체리쉘+초코팝팝",
-            "image": "Cherry Shell + Choco Pop Pop.png"
+            "image": "images/CherryShell_ChocoPopPop.png"
         },
         {
             "name": "초코쉘+딸기팝팝",
-            "image": "Chocolate Shell + Strawberry Pop Pop.png"
+            "image": "images/ChocolateShell_StrawberryPopPop.png"
         },
         {
             "name": "초코쉘+민트팝팝",
-            "image": "Chocolate Shell + Mint Pop Pop.png"
+            "image": "images/ChocolateShell_Mint_PopPop.png"
         },
         {
             "name": "초코팝팝세트",
-            "image": "Choco Pop Pop Set.png"
+            "image": "images/Choco_PopPop_Set.png"
         },
         {
             "name": "민트팝팝세트",
-            "image": "Mint Pop Pop Set.png"
+            "image": "images/Mint_PopPop_Set.png"
         },
         {
             "name": "딸기팝팝세트",
-            "image": "Strawberry Pop Pop Set.png"
+            "image": "images/Strawberry_PopPop_Set.png"
         }
     ]
     
