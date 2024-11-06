@@ -33,7 +33,8 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name="logout"),
     path('signup/', views.signup, name="signup"),
     path('mypage/', views.mypage, name="mypage"),
-    path('choice/', views.choice_page, name="choice_page")
+    path('choice/', views.choice_page, name="choice_page"),
+    path('yoajung/', views.yoajung_page, name="yoajung_page")
 
 ]
 

@@ -20,12 +20,12 @@
 
     <!-- 매장 리스트 -->
     <div class="store-container">
-        <div class="store-item">
+        <div class="store-item" onclick="openSubway()">
             <p>써브웨이</p>
             <img src="{% static 'images/subway_logo.png' %}" alt="써브웨이 로고">
         </div>
     
-        <div class="store-item">
+        <div class="store-item" onclick="openYoajung()">
             <p>요아정</p>
             <img src="{% static 'images/yoajung_logo.png' %}" alt="요거트랜드 로고">
         </div>
@@ -69,6 +69,12 @@
 
     <!-- JavaScript 코드를 body 끝에 배치 -->
     <script>
+        function openSubway() {
+            window.location.href = "{% url 'subway_page' %}"
+        }
+        function openYoajung() {
+            window.location.href = "{% url 'yoajung_page' %}";
+        }
         // 팝업 열기 함수 (전역 범위)
         function openPopup(items) {
             const popupDiv = document.querySelector('.popup');
