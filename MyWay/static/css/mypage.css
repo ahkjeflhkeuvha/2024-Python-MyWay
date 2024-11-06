@@ -65,22 +65,38 @@ body {
     max-width: 1000px;
     height: calc(590px + 55px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    align-items: center;
     z-index: 20;
     border-radius: 10px;
     background-color: #fff;
     row-gap: 10px;
     padding: 20px;
+    margin-top: 20px;
     overflow-y: auto;
-    grid-template-columns: repeat(2, 1fr);
 }
 
 .popupItem {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    width: 180px;
+    height: 180px;
 }
 
+
 .popup img {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
+}
+
+.popup button {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    background-color: transparent;
+    border: 0;
 }
 

@@ -60,6 +60,7 @@
                 if (data.status === "success") {
                     alert(data.message);
                     // 저장 후 다른 페이지로 이동하거나 작업 수행
+                    window.location.href = "{% url 'mypage' %}"
                 } else {
                     alert("저장 실패: " + data.message);
                 }

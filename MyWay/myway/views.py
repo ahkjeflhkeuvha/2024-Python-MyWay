@@ -90,3 +90,5 @@ def main_page(request):
     # 템플릿 렌더링
     return render(request, 'mainpage.html', {'combis': combinations})
 
+def yoajung_page(request):
+    return render(request, 'yoajung_page.html')
