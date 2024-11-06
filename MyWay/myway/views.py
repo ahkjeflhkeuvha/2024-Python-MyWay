@@ -92,3 +92,8 @@ def main_page(request):
 
 def yoajung_page(request):
     return render(request, 'yoajung_page.html')
+
+def gongcha_page(request):
+    return render(request, 'gongcha_page.html')
+
+

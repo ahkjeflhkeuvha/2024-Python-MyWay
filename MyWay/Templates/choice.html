@@ -29,7 +29,7 @@
             <p>요아정</p>
             <img src="{% static 'images/yoajung_logo.png' %}" alt="요거트랜드 로고">
         </div>
-        <div class="store-item">
+        <div class="store-item" onclick="openGongcha()">
             <p>공차</p>
             <img src="{% static 'images/gongcha_logo.png' %}" alt="써브웨이 로고">
         </div>
@@ -74,6 +74,9 @@
         }
         function openYoajung() {
             window.location.href = "{% url 'yoajung_page' %}";
+        }
+        function openGongcha() {
+            window.location.href = "{% url 'gongcha_page' %}";
         }
         // 팝업 열기 함수 (전역 범위)
         function openPopup(items) {

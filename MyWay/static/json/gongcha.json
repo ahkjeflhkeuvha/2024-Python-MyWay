@@ -1,4 +1,82 @@
 {
+    "스무디": [
+        {
+            "name": "밀크 쿠앤크 스무디",
+            "image": "images/Milk_Cookie_Smoothie.png"
+        },
+        {
+            "name": "브라운슈가 쥬얼리 치즈폼 스무디",
+            "image": "images/Brown_Sugar_Jewellery_Cheese_Foam_Smoothie.png"
+        },
+        {
+            "name": "딸기 쿠키 스무디",
+            "image": "images/Strawberry_Cookie_Smoothie.png"
+        },
+        {
+            "name": "초코멜로 스무디",
+            "image": "images/Chocolate_Melon_Smoothie.png"
+        },
+        {
+            "name": "제주 그린 스무디",
+            "image": "images/Jeju_Green_Smoothie.png"
+        },
+        {
+            "name": "청포도 스무디",
+            "image": "images/Green_Grape_Smoothie.png"
+        },
+        {
+            "name": "망고 스무디",
+            "image": "images/Mango_Smoothie.png"
+        },
+        {
+            "name": "카페 스무디 with 블랙티",
+            "image": "images/Cafe_Smoothie_with_Black_Tea.png"
+        },
+        {
+            "name": "초콜렛 쿠키&크림 스무디",
+            "image": "images/Chocolate_Cookies_Cream_Smoothie.png"
+        },
+        {
+            "name": "딸기 쥬얼리 요구르트 크러쉬",
+            "image": "images/Strawberry_Jewelry_Yogurt_Crush.png"
+        },
+        {
+            "name": "미니펄 트리플 딸기 크러쉬",
+            "image": "images/Mini_Pearl_Triple_Strawberry_Crush.png"
+        },
+        {
+            "name": "코코넛 밀크 스무디 + 펄",
+            "image": "images/Coconut_Milk_Smoothie_Pearls.png"
+        },
+        {
+            "name": "미니펄 트리플 망고 크러쉬",
+            "image": "images/Mini_Pearl_Triple_Mango_Crush.png"
+        },
+        {
+            "name": "초코바른 제주 그린 스무디",
+            "image": "images/Jeju_Green_Smoothie_with_Chocolate.png"
+        },
+        {
+            "name": "파인애플 코코넛 스무디",
+            "image": "images/Pineapple_Coconut_Smoothie.png"
+        },
+        {
+            "name": "초코바른 초코 스무디",
+            "image": "images/Chocolate_covered_chocolate_smoothie.png"
+        },
+        {
+            "name": "타로 스무디",
+            "image": "images/Taro_Smoothie.png"
+        },
+        {
+            "name": "초코바른 피스타치오 스무디",
+            "image": "images/Chocolate-covered_pistachio_smoothie.png"
+        },
+        {
+            "name": "레몬 요구르트 스무디",
+            "image": "images/Lemon_Yogurt_Smoothie.png"
+        }
+    ],
     "토핑": [
         {
             "name": "밀크폼",
@@ -24,84 +102,5 @@
             "name": "치즈폼",
             "image": "images/Cheese_Foam.png"
         }
-    ],
-    "스무디": [
-        {
-            "name": "밀크 쿠앤크 스무디",
-            "image": "images/Milk_Cookie_Smoothie.jpg"
-        },
-        {
-            "name": "브라운슈가 쥬얼리 치즈폼 스무디",
-            "image": "images/Brown_Sugar_Jewellery_Cheese_Foam_Smoothie.jpg"
-        },
-        {
-            "name": "딸기 쿠키 스무디",
-            "image": "images/Strawberry_Cookie_Smoothie.jpg"
-        },
-        {
-            "name": "초코멜로 스무디",
-            "image": "images/Chocolate_Melon_Smoothie.jpg"
-        },
-        {
-            "name": "제주 그린 스무디",
-            "image": "images/Jeju_Green_Smoothie.jpg"
-        },
-        {
-            "name": "청포도 스무디",
-            "image": "images/Green_Grape_Smoothie.jpg"
-        },
-        {
-            "name": "망고 스무디",
-            "image": "images/Mango_Smoothie.jpg"
-        },
-        {
-            "name": "카페 스무디 with 블랙티",
-            "image": "images/Cafe_Smoothie_with_Black_Tea.jpg"
-        },
-        {
-            "name": "초콜렛 쿠키&크림 스무디",
-            "image": "images/Chocolate_Cookies_Cream_Smoothie.jpg"
-        },
-        {
-            "name": "딸기 쥬얼리 요구르트 크러쉬",
-            "image": "images/Strawberry_Jewelry_Yogurt_Crush.jpg"
-        },
-        {
-            "name": "미니펄 트리플 딸기 크러쉬",
-            "image": "images/Mini_Pearl_Triple_Strawberry_Crush.jpg"
-        },
-        {
-            "name": "코코넛 밀크 스무디 + 펄",
-            "image": "images/Coconut_Milk_Smoothie_Pearls.jpg"
-        },
-        {
-            "name": "미니펄 트리플 망고 크러쉬",
-            "image": "images/Mini_Pearl_Triple_Mango_Crush.jpg"
-        },
-        {
-            "name": "초코바른 제주 그린 스무디",
-            "image": "images/Jeju_Green_Smoothie_with_Chocolate.jpg"
-        },
-        {
-            "name": "파인애플 코코넛 스무디",
-            "image": "images/Pineapple_Coconut_Smoothie.jpg"
-        },
-        {
-            "name": "초코바른 초코 스무디",
-            "image": "images/Chocolate_covered_chocolate_smoothie.jpg"
-        },
-        {
-            "name": "타로 스무디",
-            "image": "images/Taro_Smoothie.jpg"
-        },
-        {
-            "name": "초코바른 피스타치오 스무디",
-            "image": "images/Chocolate-covered_pistachio_smoothie.jpg"
-        },
-        {
-            "name": "레몬 요구르트 스무디",
-            "image": "images/Lemon_Yogurt_Smoothie.jpg"
-        }
     ]
-    
 }

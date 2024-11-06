@@ -1,0 +1,113 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+* {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #D5F7D4;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    font-size: 16px;
+}
+
+.title-container {
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-container > p {
+    width: fit-content;
+}
+
+.title-container > div {
+    width: 80%;
+    height: 1px;
+    border: 1px solid #FFBB10;
+}
+
+.item-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    row-gap: 20px;
+}
+
+.item-container > .item {
+    width: 200px;
+    aspect-ratio: 1/1;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.item > img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+button {
+    width: 100%;
+    height: 50px;
+    border: 0;
+    border-radius: 20px;
+    background-color: red;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.resInput {
+    display: none;
+
+}
+
+.resInput > p {
+    font-style: bold;
+    font-size: 20px;
+}
+
+.resInput > input {
+    width: 250px;
+    height: 40px;
+    padding: 10px;
+    outline: 0;
+    border: 0;
+    border-radius: 10px;
+}
+
+.resInput > button {
+    width: 80%;
+    background-color: white;
+}
+
+.show {
+    position: absolute;
+    background-color: #FFBB10;
+    width: 300px;
+    height: 200px;
+    top: 50%;
+    left: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 25px;
+    border-radius: 20px;
+}

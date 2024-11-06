@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/gongcha.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="{% static 'images/MyWayYellow.png' %}" alt="">
+    </div>
+
+    <div class="container">
+        <div class="title-container">
+            <p></p>
+            <div></div>
+        </div>
+        
+        <div class="item-container">
+            <div class="item">
+                <img src="" alt="">
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="nextPage()">다음</button>
+
+    <div class="resInput">
+        <p>조합 이름을 입력해주세요</p>
+        <input type="text" placeholder="조합 이름">
+        <button onclick="saveCombination()">저장</button>
+    </div>
+    
+
+    <script>
+        const itemImg = document.querySelector('.item > img');
+        const itemName = document.querySelector('.item > p');
+        const pageName = document.querySelector('.title-container > p');
+        const titleContainer = document.getElementsByClassName('title-container')[0];
+        const itemContainer = document.getElementsByClassName('item-container')[0];
+        const resInput = document.querySelector('.resInput');
+        const resName = document.querySelector('.resInput > input');
+        let i = 0;
+        let keys = [];
+        let menuData = {};
+        
+        let saveCombis = [];
+        
+        // 아이템을 저장하는 함수
+        function saveCombi(menu) {
+            const imgSrc = menu.querySelector("img").getAttribute("src");
+            const itemName = menu.querySelector("p").textContent;
+            saveCombis.push({ image: imgSrc, name: itemName });
+        }
+        
+        // 데이터 가져오기
+        function getData() {
+            const url = "{% static 'json/gongcha.json' %}";
+        
+            fetch(url)
+                .then((res) => res.json())
+                .then((data) => showData(data))
+                .catch((error) => console.log(error));
+        }
+        
+        // 다음 페이지로 이동하는 함수
+        function nextPage() {
+            i++;
+            showData(menuData);
+        
+            // 모든 메뉴를 선택했을 때 이름 입력창 표시
+            if (i >= 5) {
+                i = 0
+                console.log(resInput)
+                resInput.classList.add('show');
+            }
+        }
+        
+        // 데이터 표시 함수
+        function showData(data) {
+            itemContainer.innerHTML = "";
+            menuData = data;
+            Object.keys(data).forEach((category) => {
+                console.log(category)
+                keys.push(category)
+            });// 키 배열 만들기
+        
+            const staticPath = "{% static '' %}";
+        
+            data[keys[i]].forEach((item) => {
+                const dataHTML = `<div class="item" onclick="saveCombi(this)">
+                                        <img src="${staticPath}${item["image"]}" alt="">
+                                        <p>${item["name"]}</p>
+                                  </div>`;
+                itemContainer.innerHTML += dataHTML;
+                pageName.textContent = `${keys[i]}`;
+            });
+        }
+        
+        // 조합 저장 함수
+        function saveCombination() {
+            const menuName = resName.value; // 이름 입력값 가져오기
+        
+            // 입력값이 비어 있는지 확인
+            if (!menuName.trim()) {
+                alert("조합 이름을 입력해주세요!");
+                return;
+            }
+        
+            // 조합 이름과 아이템들을 함께 저장
+            const dataToSend = {
+                name: menuName,
+                items: saveCombis
+            };
+        
+            console.log(dataToSend);
+        
+            fetch("{% url 'save_combination' %}", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": "{{ csrf_token }}"
+                },
+                body: JSON.stringify(dataToSend)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    alert(data.message);
+                    window.location.href = "{% url 'result_page' %}";
+                } else {
+                    alert("저장 실패 : " + data.message);
+                }
+            })
+            .catch(error => console.error("Error : ", error));
+        }
+        
+        // 초기 데이터 가져오기
+        getData();
+        
+    </script>
+</body>
+</html>
