@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/mypage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/choice.css' %}">
     <title>Document</title>
 </head>
 <body>
@@ -13,11 +13,45 @@
 
     <div class="container">
         <div class="title-container">
-            <p></p>
+            <p>매장 선택</p>
             <div></div>
         </div>
     </div>
 
+    <!-- 매장 리스트 -->
+    <div class="store-container">
+        <div class="store-item">
+            <p>써브웨이</p>
+            <img src="{% static 'images/subway_logo.png' %}" alt="써브웨이 로고">
+        </div>
+    
+        <div class="store-item">
+            <p>요아정</p>
+            <img src="{% static 'images/yoajung_logo.png' %}" alt="요거트랜드 로고">
+        </div>
+        <div class="store-item">
+            <p>공차</p>
+            <img src="{% static 'images/gongcha_logo.png' %}" alt="써브웨이 로고">
+        </div>
+    
+        <div class="store-item">
+            <p>하이디라오</p>
+            <img src="{% static 'images/haidilao_logo.png' %}" alt="요거트랜드 로고">
+        </div>
+        <div class="store-item">
+            <p>애플</p>
+            <img src="{% static 'images/apple_logo.png' %}" alt="써브웨이 로고">
+        </div>
+    
+        <div class="store-item">
+            <p>스타벅스</p>
+            <img src="{% static 'images/starbucks_logo.png' %}" alt="요거트랜드 로고">
+        </div>
+    </div>
+    
+    
+    
+    <!-- 지은  -->
     <div class="item-container">
         <!-- 아이템 리스트 표시 -->
         {% for combination in combis %}
