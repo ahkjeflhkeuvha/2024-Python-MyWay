@@ -102,5 +102,27 @@
             "name": "치즈폼",
             "image": "images/Cheese_Foam.png"
         }
+    ],
+    "당도": [
+        {
+            "name": "당도 100",
+            "image": "images/sugar100.png"
+        },
+        {
+            "name": "당도 70",
+            "image": "images/sugar70.png"
+        },
+        {
+            "name": "당도 50",
+            "image": "images/sugar50.png"
+        },
+        {
+            "name": "당도 30",
+            "image": "images/sugar30.png"
+        },
+        {
+            "name": "당도 0",
+            "image": "images/sugar0.png"
+        }
     ]
 }
