@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="logo-container">
+    <div class="logo-container" onclick="openMain()">
         <img src="{% static 'images/MyWay.png' %}" alt="">
     </div>
 
@@ -55,6 +55,10 @@
             },
         });
 
+        function openMain(){
+            window.location.href = "{% url 'main_page' %}"
+        }
+        
         function choicePage() {
             window.location.href = "{% url 'choice_page' %}";
         }

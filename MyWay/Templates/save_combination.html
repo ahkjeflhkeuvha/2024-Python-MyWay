@@ -9,7 +9,7 @@
     <title>Save Combination</title>
 </head>
 <body>
-    <div class="logo-container">
+    <div class="logo-container" onclick="openMain()">
         <!-- 이미지 파일에 static 태그 추가 -->
         <img src="{% static 'images/menu.png' %}" alt="Logo">
     </div>
@@ -33,6 +33,10 @@
     </div>
 
     <script>
+        function openMain(){
+            window.location.href = "{% url 'main_page' %}"
+        }
+        
         function saveCombination() {
             const name = document.getElementById("name").value;
             const description = document.getElementById("description").value;

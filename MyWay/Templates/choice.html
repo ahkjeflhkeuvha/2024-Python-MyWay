@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="logo-container">
+    <div class="logo-container" onclick="openMain()">
         <img src="{% static 'images/MyWayYellow.png' %}" alt="">
     </div>
 
@@ -69,6 +69,9 @@
 
     <!-- JavaScript 코드를 body 끝에 배치 -->
     <script>
+        function openMain(){
+            window.location.href = "{% url 'main_page' %}"
+        }
         function openSubway() {
             window.location.href = "{% url 'subway_page' %}"
         }

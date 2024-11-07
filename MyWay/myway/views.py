@@ -1,4 +1,5 @@
 import json
+import random
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from .models import Combination
@@ -83,12 +84,11 @@ from django.shortcuts import render
 def main_page(request):
     combinations = list(Combination.objects.all())
     
-    for combination in combinations:
-        print(combination.menu_name)
-        print(combination.items)
+    randomCombi = random.sample(combinations, 5)
+    
     
     # 템플릿 렌더링
-    return render(request, 'mainpage.html', {'combis': combinations})
+    return render(request, 'mainpage.html', {'combis': randomCombi})
 
 def yoajung_page(request):
     return render(request, 'yoajung_page.html')
