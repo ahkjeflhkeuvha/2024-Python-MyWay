@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{% static 'css/result.css' %}">
 </head>
 <body>
-    <div class="logo-container">
+    <div class="logo-container" onclick="openMain()">
         <img src="{% static 'images/MyWayYellow.png' %}" alt="">
     </div>
 
@@ -28,6 +28,10 @@
     <button onclick="saveCombination()">저장하시겠습니까?</button>
 
     <script>
+        function openMain(){
+            window.location.href = "{% url 'main_page' %}"
+        }
+        
         function saveCombination() {
             // 사용자의 이름과 메뉴 이름 및 아이템 데이터 가져오기
             const userName = "사용자 이름"; // 여기에 사용자 이름을 동적으로 가져오도록 설정
