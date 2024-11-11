@@ -16,7 +16,7 @@
 
     <section class="search-container">
         <input type="text" name="query" id="search-bar" placeholder="나의 조합을 검색해 보세요!">
-        <img src="{% static 'images/search.png' %}" alt="">
+        <img src="{% static 'images/search.png' %}" alt="" onclick="searchCombination()">
     </section>
 
     <p class="recommend">유진님을 위한 <br> <span class="accent">추천 조합</span> 이에요!</p>
@@ -54,6 +54,33 @@
                 hide: true,
             },
         });
+
+        function searchCombination(){
+            const inputData = document.getElementById("search-bar").value
+            const dataToSend = {
+                searchData : inputData
+            };
+            fetch("{% url 'search_page' %}", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": "{{ csrf_token }}"
+                },
+                body: JSON.stringify(dataToSend)
+            })
+            .then(response => console.log(response))
+            .then(data => {
+                if (data.status === "success") {
+                    alert(data.message);
+                    window.location.href = "{% url 'search_page' %}";
+                } else {
+                    alert("저장 실패 : " + data.message);
+                }
+            })
+            .catch(error => {
+                console.error("Error : ", error)
+            });
+        }
 
         function openMain(){
             window.location.href = "{% url 'main_page' %}"

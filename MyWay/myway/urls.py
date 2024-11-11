@@ -35,7 +35,8 @@ urlpatterns = [
     path('mypage/', views.mypage, name="mypage"),
     path('choice/', views.choice_page, name="choice_page"),
     path('yoajung/', views.yoajung_page, name="yoajung_page"),
-    path('gongcha/', views.gongcha_page, name="gongcha_page")
+    path('gongcha/', views.gongcha_page, name="gongcha_page"),
+    path('search/', views.search_page, name="search_page"),
 
 
 ]

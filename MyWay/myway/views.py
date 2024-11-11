@@ -30,6 +30,23 @@ def signup(request):
 def combination_page(request):
     return render(request, 'save_combination.html')
 
+def search_page(request):
+    if request.method == "POST":
+        # JSON 데이터를 로드
+        data = json.loads(request.body)
+        search_query = data.get("inputData", "").strip()
+        
+        # 조합 이름에 검색어가 포함된 경우 필터링
+        combination = Combination.objects.filter(menu_name__icontains=search_query)
+        
+        print(f"Search Query: {search_query}")
+        print(f"Filtered Combinations: {combination}")
+        
+        return render(request, 'search.html', {"combi": combination})
+    
+    # GET 요청 처리 (기본적으로 모든 조합 반환)
+    return render(request, 'search.html', {"combi": Combination.objects.all()})
+
 def subway_page(request):
     return render(request, 'subway.html')
 
