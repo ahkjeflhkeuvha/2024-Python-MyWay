@@ -140,12 +140,13 @@ a {
 .swiper-slide {
     width: 160px;
     height: 175px;
+    padding: 25px 10px;
     border-radius: 8px;
     background: #fff;
     text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
 }
 
 .swiper-slide > img {
@@ -192,7 +193,7 @@ a {
     top: 50%; /* 중앙 위치 설정 */
     left: 50%; /* 중앙 위치 설정 */
     transform: translate(-50%, -50%); /* 화면 중앙에 배치 */
-    background: #8FD9FC;
+    background: #d2f1ff;
     padding: 20px;
     border-radius: 10px;
     width: 80%;

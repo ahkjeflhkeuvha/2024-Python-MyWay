@@ -31,6 +31,10 @@ def signup(request):
 def combination_page(request):
     return render(request, 'save_combination.html')
 
+from django.shortcuts import redirect
+from django.urls import reverse
+import json
+
 def search_page(request):
     # POST 요청 처리
     if request.method == 'POST':
@@ -44,10 +48,9 @@ def search_page(request):
             if search_query:
                 print(f"Search Query: {search_query}")
                 combination = Combination.objects.filter(menu_name__icontains=search_query)
-                # 검색 결과가 있으면 바로 리턴
-                if combination.exists():
-                    print(f"Found combinations: {combination}")
-                    return render(request, 'search.html', {"combi": combination})
+                # 검색 결과가 있으면 리다이렉트하여 GET 요청으로 처리
+                if combination:
+                    return redirect(reverse('search_page') + f'?search={search_query}')
                 else:
                     print('No matching combinations found')
             
@@ -63,11 +66,17 @@ def search_page(request):
             print(f"Error: {e}")
             return render(request, 'search.html', {"combi": Combination.objects.all()})
 
-    # POST가 아닌 다른 요청 처리 (예: GET)
+    # GET 요청 처리
     else:
         print(f"Non-POST request received: {request.method}")
-        # GET 요청일 경우에는 기본적으로 전체 데이터를 반환하거나 다른 로직을 처리할 수 있음
-        combination = Combination.objects.all()
+        search_query = request.GET.get('search', '').strip()
+        
+        if search_query:
+            print(f"Search Query from GET: {search_query}")
+            combination = Combination.objects.filter(menu_name__icontains=search_query)
+        else:
+            combination = Combination.objects.all()
+        
         return render(request, 'search.html', {"combi": combination})
 
 
