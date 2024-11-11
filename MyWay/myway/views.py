@@ -6,6 +6,7 @@ from .models import Combination
 from .forms import UserForm  # UserForm 임포트
 from django.contrib.auth import authenticate, login
 
+
 def signup(request):
     if request.method == "POST":
         form = UserForm(request.POST)
@@ -31,21 +32,44 @@ def combination_page(request):
     return render(request, 'save_combination.html')
 
 def search_page(request):
-    if request.method == "POST":
-        # JSON 데이터를 로드
-        data = json.loads(request.body)
-        search_query = data.get("inputData", "").strip()
-        
-        # 조합 이름에 검색어가 포함된 경우 필터링
-        combination = Combination.objects.filter(menu_name__icontains=search_query)
-        
-        print(f"Search Query: {search_query}")
-        print(f"Filtered Combinations: {combination}")
-        
+    # POST 요청 처리
+    if request.method == 'POST':
+        try:
+            # JSON 데이터를 로드
+            print('POST Request Body:', request.body)
+            data = json.loads(request.body)
+            search_query = data.get("searchData", "").strip()
+
+            # 검색어가 비어있지 않은 경우에만 필터링
+            if search_query:
+                print(f"Search Query: {search_query}")
+                combination = Combination.objects.filter(menu_name__icontains=search_query)
+                # 검색 결과가 있으면 바로 리턴
+                if combination.exists():
+                    print(f"Found combinations: {combination}")
+                    return render(request, 'search.html', {"combi": combination})
+                else:
+                    print('No matching combinations found')
+            
+            # 검색어가 없거나, 검색 결과가 없는 경우 전체 반환
+            combination = Combination.objects.all()
+            print(f"Returning all combinations: {combination}")
+            return render(request, 'search.html', {"combi": combination})
+
+        except json.JSONDecodeError:
+            print("Invalid JSON format")
+            return render(request, 'search.html', {"combi": Combination.objects.all()})
+        except Exception as e:
+            print(f"Error: {e}")
+            return render(request, 'search.html', {"combi": Combination.objects.all()})
+
+    # POST가 아닌 다른 요청 처리 (예: GET)
+    else:
+        print(f"Non-POST request received: {request.method}")
+        # GET 요청일 경우에는 기본적으로 전체 데이터를 반환하거나 다른 로직을 처리할 수 있음
+        combination = Combination.objects.all()
         return render(request, 'search.html', {"combi": combination})
-    
-    # GET 요청 처리 (기본적으로 모든 조합 반환)
-    return render(request, 'search.html', {"combi": Combination.objects.all()})
+
 
 def subway_page(request):
     return render(request, 'subway.html')
