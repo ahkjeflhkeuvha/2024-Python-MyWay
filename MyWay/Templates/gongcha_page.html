@@ -113,10 +113,11 @@
                 alert("조합 이름을 입력해주세요!");
                 return;
             }
-        
+            const menuBrand = localStorage.getItem("brand")
             // 조합 이름과 아이템들을 함께 저장
             const dataToSend = {
-                name: menuName,
+                menu_brand: menuBrand,
+                menu_name: menuName,
                 items: saveCombis
             };
         

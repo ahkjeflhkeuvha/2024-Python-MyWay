@@ -59,6 +59,8 @@
             const itemName = menu.querySelector("p").textContent;
             saveCombis.push({ image: imgSrc, name: itemName });
         }
+
+        const menuBrand = localStorage.getItem("brand")
         
         // 데이터 가져오기
         function getData() {
@@ -78,7 +80,6 @@
             // 모든 메뉴를 선택했을 때 이름 입력창 표시
             if (i >= 5) {
                 i = 0
-                console.log(resInput)
                 resInput.classList.add('show');
             }
         }
@@ -113,10 +114,11 @@
                 alert("조합 이름을 입력해주세요!");
                 return;
             }
-        
+            const menuBrand = localStorage.getItem("brand")
             // 조합 이름과 아이템들을 함께 저장
             const dataToSend = {
-                name: menuName,
+                menu_brand: menuBrand,
+                menu_name: menuName,
                 items: saveCombis
             };
         

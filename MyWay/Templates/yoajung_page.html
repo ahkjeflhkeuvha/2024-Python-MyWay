@@ -74,13 +74,11 @@
         function nextPage() {
             i++;
             showData(menuData);
+            console.log(i)
         
             // 모든 메뉴를 선택했을 때 이름 입력창 표시
-            if (i >= 0) {
-                i = 0
-                console.log(resInput)
-                resInput.classList.add('show');
-            }
+            resInput.classList.add('show');
+
         }
         
         // 데이터 표시 함수
@@ -107,7 +105,7 @@
         // 조합 저장 함수
         function saveCombination() {
             const menuName = resName.value; // 이름 입력값 가져오기
-        
+            const menuBrand = localStorage.getItem("brand")
             // 입력값이 비어 있는지 확인
             if (!menuName.trim()) {
                 alert("조합 이름을 입력해주세요!");
@@ -116,7 +114,8 @@
         
             // 조합 이름과 아이템들을 함께 저장
             const dataToSend = {
-                name: menuName,
+                menu_brand: menuBrand,
+                menu_name: menuName,
                 items: saveCombis
             };
         

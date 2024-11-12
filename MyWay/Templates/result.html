@@ -34,7 +34,7 @@
         
         function saveCombination() {
             // 사용자의 이름과 메뉴 이름 및 아이템 데이터 가져오기
-            const userName = "사용자 이름"; // 여기에 사용자 이름을 동적으로 가져오도록 설정
+            const menuBrand = localStorage.getItem("brand"); // 여기에 사용자 이름을 동적으로 가져오도록 설정
             const menuName = document.querySelector('.title-container > p').textContent;
             const items = [];
         
@@ -44,17 +44,16 @@
                 items.push({ image: image, name: name });
             });
 
-            console.log(items)
         
             // 서버로 데이터 전송
-            fetch("{% url 'save_combinations' %}", {
+            fetch("{% url 'save_combination' %}", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     "X-CSRFToken": "{{ csrf_token }}"
                 },
                 body: JSON.stringify({
-                    user_name: userName,
+                    menu_brand: menuBrand,
                     menu_name: menuName,
                     items: items
                 })

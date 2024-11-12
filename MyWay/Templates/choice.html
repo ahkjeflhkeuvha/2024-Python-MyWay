@@ -74,12 +74,15 @@
         }
         function openSubway() {
             window.location.href = "{% url 'subway_page' %}"
+            localStorage.setItem("brand", "서브웨이")
         }
         function openYoajung() {
             window.location.href = "{% url 'yoajung_page' %}";
+            localStorage.setItem("brand", "요아정")
         }
         function openGongcha() {
             window.location.href = "{% url 'gongcha_page' %}";
+            localStorage.setItem("brand", "공차")
         }
         // 팝업 열기 함수 (전역 범위)
         function openPopup(items) {

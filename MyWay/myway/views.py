@@ -86,31 +86,22 @@ def subway_page(request):
 def choice_page(request):
     return render(request, 'choice.html')
 
-def save_combinations(request):
+def save_combination(request):
     if request.method == "POST":
         data = json.loads(request.body)
-        user_name = data.get("user_name")
+        menu_brand = data.get("menu_brand")
         menu_name = data.get("menu_name")
         items = data.get("items")
 
         print(data)
         # 데이터베이스에 조합 저장
         combination = Combination.objects.create(
-            user_name=user_name,
+            menu_brand=menu_brand,
             menu_name=menu_name,
             items=items
         )
         combination.save()
 
-        return JsonResponse({"status": "success", "message": "조합이 성공적으로 저장되었습니다!"})
-    return JsonResponse({"status": "fail", "message": "잘못된 요청입니다."})
-
-def save_combination(request):
-    if request.method == "POST":
-        data = json.loads(request.body)
-        print(data)
-        # 예: 세션에 데이터를 저장
-        request.session['saved_combis'] = data
         return JsonResponse({"status": "success", "message": "조합이 성공적으로 저장되었습니다!"})
     return JsonResponse({"status": "fail", "message": "잘못된 요청입니다."})
 
@@ -121,11 +112,6 @@ def result_page(request):
 
 def mypage(request):
     combinations = list(Combination.objects.all())
-    print(combinations)
-    
-    for combination in combinations:
-        print(combination.menu_name)
-        print(combination.items)
     
     return render(request, 'mypage.html', {'combis':combinations})
 
