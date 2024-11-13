@@ -76,7 +76,7 @@
             showData(menuData);
         
             // 모든 메뉴를 선택했을 때 이름 입력창 표시
-            if (i >= 3) {
+            if (i >= keys.length) {
                 i = 0
                 console.log(resInput)
                 resInput.classList.add('show');
@@ -87,6 +87,7 @@
         function showData(data) {
             itemContainer.innerHTML = "";
             menuData = data;
+            keys = Object.keys(data);
             Object.keys(data).forEach((category) => {
                 console.log(category)
                 keys.push(category)
@@ -123,26 +124,11 @@
         
             console.log(dataToSend);
         
-            fetch("{% url 'save_combination' %}", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "X-CSRFToken": "{{ csrf_token }}"
-                },
-                body: JSON.stringify(dataToSend)
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === "success") {
-                    alert(data.message);
-                    window.location.href = "{% url 'result_page' %}";
-                } else {
-                    alert("저장 실패 : " + data.message);
-                }
-            })
-            .catch(error => console.error("Error : ", error));
+            localStorage.setItem("save_combi", JSON.stringify(dataToSend));
+
+            console.log(dataToSend);
+            window.location.href = "{% url 'result_page' %}";
         }
-        
         // 초기 데이터 가져오기
         getData();
         

@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #D5F7D4;
+    background: #fdd2a7;
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@ body {
 .title-container > div {
     width: 80%;
     height: 1px;
-    border: 1px solid #FFBB10;
+    border: 1px solid #ffa154;
 }
 
 .item-container {
@@ -59,6 +59,12 @@ body {
     border-radius: 8px;
 }
 
+.item > p {
+    white-space: break-spaces;
+    text-align: center;
+    word-break: keep-all;
+}
+
 .item:hover {
     transform: scale(1.05);
 }
@@ -68,7 +74,8 @@ button {
     height: 50px;
     border: 0;
     border-radius: 20px;
-    background-color: red;
+    background-color: #ffa154;
+    color: white;
     font-size: 20px;
     margin-top: 10px;
 }

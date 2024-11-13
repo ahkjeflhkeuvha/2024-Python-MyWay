@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #D5F7D4;
+    background: #FFD3D3;
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@ body {
 .title-container > div {
     width: 80%;
     height: 1px;
-    border: 1px solid #FFBB10;
+    border: 1px solid #EC6CA3;
 }
 
 .item-container {
@@ -54,6 +54,15 @@ body {
 .item > img {
     width: 150px;
     height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.item > p {
+    white-space: break-spaces;
+    text-align: center;
+    word-break: keep-all;
 }
 
 .item:hover {
@@ -65,7 +74,8 @@ button {
     height: 50px;
     border: 0;
     border-radius: 20px;
-    background-color: red;
+    background-color: #EC6CA3;
+    color: white;
     font-size: 20px;
     margin-top: 10px;
 }
@@ -96,7 +106,7 @@ button {
 
 .show {
     position: absolute;
-    background-color: #FFBB10;
+    background-color: #EC6CA3;
     width: 300px;
     height: 200px;
     top: 50%;
