@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from .models import Combination
 from .forms import UserForm  # UserForm 임포트
 from django.contrib.auth import authenticate, login
+from django.db.models import Q
 
 
 def signup(request):
@@ -47,7 +48,10 @@ def search_page(request):
             # 검색어가 비어있지 않은 경우에만 필터링
             if search_query:
                 print(f"Search Query: {search_query}")
-                combination = Combination.objects.filter(menu_name__icontains=search_query)
+                combination = Combination.objects.filter(
+                    Q(menu_name__icontains=search_query) | Q(menu_brand__icontains=search_query)
+                )
+
                 # 검색 결과가 있으면 리다이렉트하여 GET 요청으로 처리
                 if combination:
                     return redirect(reverse('search_page') + f'?search={search_query}')
@@ -73,7 +77,9 @@ def search_page(request):
         
         if search_query:
             print(f"Search Query from GET: {search_query}")
-            combination = Combination.objects.filter(menu_name__icontains=search_query)
+            combination = Combination.objects.filter(
+                Q(menu_name__icontains=search_query) | Q(menu_brand__icontains=search_query)
+            )   
         else:
             combination = Combination.objects.all()
         
@@ -106,16 +112,13 @@ def save_combination(request):
     return JsonResponse({"status": "fail", "message": "잘못된 요청입니다."})
 
 def result_page(request):
-    saved_combis = request.session.get('saved_combis', [])
-    print(saved_combis)
-    return render(request, 'result.html', {'combis': saved_combis})
+    return render(request, 'result.html')
 
 def mypage(request):
     combinations = list(Combination.objects.all())
     
     return render(request, 'mypage.html', {'combis':combinations})
 
-from django.shortcuts import render
 
 def main_page(request):
     combinations = list(Combination.objects.all())

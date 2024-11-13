@@ -13,7 +13,6 @@
 
     <div class="container">
         <div class="title-container">
-            <p></p>
             <div></div>
         </div>
     </div>
@@ -21,10 +20,11 @@
     <div class="item-container">
         <!-- 아이템 리스트 표시 -->
         {% for combination in combi %}
-        <div class="item" onclick="openPopup({{ combination.items|safe }})">
+        <div class="item" onclick="openPopup({{ combination.items|safe }}, '{{ combination.menu_name|escapejs }}')">
             <p>{{ combination.menu_name }}</p>
             <img src="{{ combination.items.0.image }}" alt="{{ combination.menu_name }}">
         </div>
+        
         {% endfor %}
 
         <!-- 팝업 영역 -->
@@ -40,10 +40,19 @@
         }
         
         // 팝업 열기 함수 (전역 범위)
-        function openPopup(items) {
+        function openPopup(items, menuName) {
             const popupDiv = document.querySelector('.popup');
             let popupItemsHTML = "";
-
+        
+            console.log(items);
+        
+            // 팝업에 menu_name 추가
+            popupItemsHTML += `
+                <div class="popupMenuName">
+                    <h2>${menuName}</h2>
+                </div>
+            `;
+        
             // 아이템을 하나씩 팝업에 추가
             items.forEach(item => {
                 popupItemsHTML += `
@@ -53,7 +62,7 @@
                     </div>
                 `;
             });
-
+        
             popupDiv.innerHTML = `
                 <button onclick="closePopup()">X</button>
                 ${popupItemsHTML}

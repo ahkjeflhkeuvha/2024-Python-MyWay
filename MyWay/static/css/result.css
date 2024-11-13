@@ -25,7 +25,9 @@ body {
 }
 
 .title-container > p {
-    width: fit-content;
+    width: max-content;
+    white-space: nowrap;
+    margin-right: 10px;
 }
 
 .title-container > div {

@@ -20,6 +20,7 @@ body {
     border: 0;
     outline: 0;
     font-size: 16px;
+    background-color: transparent;
 }
 
 .recommend-container {
@@ -138,7 +139,7 @@ a {
 }
 
 .swiper-slide {
-    width: 160px;
+    width: 200px;
     height: 175px;
     padding: 25px 10px;
     border-radius: 8px;
@@ -182,12 +183,27 @@ a {
     top: 50%; /* 중앙 위치 설정 */
     left: 50%; /* 중앙 위치 설정 */
     transform: translate(-50%, -50%); /* 화면 중앙에 배치 */
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: grid;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1000px;
+    height: calc(590px + 55px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 20;
+    border-radius: 10px;
+    background-color: #fff;
+    row-gap: 10px;
+    padding: 70px 20px;
+    overflow-y: auto;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
 }
+
+.popup > .popupMenuName {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
 .popup-content {
     position: fixed;
     top: 50%; /* 중앙 위치 설정 */
@@ -213,17 +229,24 @@ a {
     column-gap: 20px;
 }
 
-.close-btn {
+.popup > button {
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: 10px;
-    cursor: pointer;
+    background-color: transparent;
+    border: 0;
 }
 
 .popupItem {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     border-radius: 10px;
-    padding: 10px;
+    width: 200px;
+    height: 200px;
 }
 
 .popupItem > img {
