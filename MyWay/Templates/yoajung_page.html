@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/yoajung.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="logo-container" onclick="openMain()">
+        <img src="{% static 'images/pinkLogo.png' %}" alt="">
+    </div>
+
+    <div class="container">
+        <div class="title-container">
+            <p></p>
+            <div></div>
+        </div>
+        
+        <div class="item-container">
+            <div class="item">
+                <img src="" alt="">
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="nextPage()">다음</button>
+
+    <div class="resInput">
+        <p>조합 이름을 입력해주세요</p>
+        <input type="text" placeholder="조합 이름">
+        <button onclick="saveCombination()">저장</button>
+    </div>
+    
+
+    <script>
+        // DOM 요소 선택 및 초기 변수 설정
+        const itemImg = document.querySelector('.item > img');
+        const itemName = document.querySelector('.item > p');
+        const pageName = document.querySelector('.title-container > p');
+        const titleContainer = document.querySelector('.title-container');
+        const itemContainer = document.querySelector('.item-container');
+        const resInput = document.querySelector('.resInput');
+        const resName = document.querySelector('.resInput > input');
+        let i = 0;
+        let keys = [];
+        let menuData = {};
+        let saveCombis = [];
+
+        // 페이지 이동 함수
+        function openMain() {
+            window.location.href = "{% url 'main_page' %}";
+        }
+
+        // 아이템 저장 함수
+        function saveCombi(menu) {
+            const imgSrc = menu.querySelector("img").getAttribute("src");
+            const itemName = menu.querySelector("p").textContent;
+            saveCombis.push({ image: imgSrc, name: itemName });
+        }
+
+        // 데이터 가져오기
+        function getData() {
+            const url = "{% static 'json/yoajung.json' %}";
+            
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    menuData = data;
+                    showData(data);
+                })
+                .catch(error => console.error("Error:", error));
+        }
+
+        // 다음 페이지 함수
+        function nextPage() {
+            i++;
+            if (i >= keys.length) {
+                i = 0; // 처음으로 돌아감
+                resInput.classList.add('show'); // 모든 아이템 선택 후 이름 입력창 표시
+            } else {
+                showData(menuData);
+            }
+        }
+
+        // 데이터 표시 함수
+        function showData(data) {
+            itemContainer.innerHTML = "";
+            keys = Object.keys(data);
+            const staticPath = "{% static '' %}";
+
+            // 현재 페이지에 해당하는 카테고리 표시
+            if (keys[i]) {
+                data[keys[i]].forEach(item => {
+                    const itemHTML = `
+                        <div class="item" onclick="saveCombi(this)">
+                            <img src="${staticPath}${item["image"]}" alt="">
+                            <p>${item["name"]}</p>
+                        </div>`;
+                    itemContainer.innerHTML += itemHTML;
+                });
+                pageName.textContent = `${keys[i]}`;
+            }
+        }
+
+        // 조합 저장 함수
+        function saveCombination() {
+            const menuName = resName.value.trim();
+            const menuBrand = localStorage.getItem("brand");
+
+            // 입력값 확인
+            if (!menuName) {
+                alert("조합 이름을 입력해주세요!");
+                return;
+            }
+
+            // 데이터 생성
+            const dataToSend = {
+                menu_brand: menuBrand,
+                menu_name: menuName,
+                items: saveCombis
+            };
+
+            localStorage.setItem("save_combi", JSON.stringify(dataToSend));
+
+            console.log(dataToSend);
+            window.location.href = "{% url 'result_page' %}";
+
+        }
+
+        // 초기 데이터 가져오기
+        getData();
+
+    </script>
+</body>
+</html>

@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="logo-container">
+    <div class="logo-container" onclick="openMain()">
         <img src="{% static 'images/MyWayYellow.png' %}" alt="">
     </div>
 
@@ -49,12 +49,18 @@
         
         let saveCombis = [];
         
+        function openMain(){
+            window.location.href = "{% url 'main_page' %}"
+        }
+
         // 아이템을 저장하는 함수
         function saveCombi(menu) {
             const imgSrc = menu.querySelector("img").getAttribute("src");
             const itemName = menu.querySelector("p").textContent;
             saveCombis.push({ image: imgSrc, name: itemName });
         }
+
+        const menuBrand = localStorage.getItem("brand")
         
         // 데이터 가져오기
         function getData() {
@@ -74,7 +80,6 @@
             // 모든 메뉴를 선택했을 때 이름 입력창 표시
             if (i >= 5) {
                 i = 0
-                console.log(resInput)
                 resInput.classList.add('show');
             }
         }
@@ -101,42 +106,30 @@
         }
         
         // 조합 저장 함수
+        // 조합 저장 함수
         function saveCombination() {
             const menuName = resName.value; // 이름 입력값 가져오기
-        
+
             // 입력값이 비어 있는지 확인
             if (!menuName.trim()) {
                 alert("조합 이름을 입력해주세요!");
                 return;
             }
-        
+            const menuBrand = localStorage.getItem("brand");
+            console.log(menuName);
             // 조합 이름과 아이템들을 함께 저장
             const dataToSend = {
-                name: menuName,
+                menu_brand: menuBrand,
+                menu_name: menuName,
                 items: saveCombis
             };
-        
+
+            localStorage.setItem("save_combi", JSON.stringify(dataToSend));
+
             console.log(dataToSend);
-        
-            fetch("{% url 'save_combination' %}", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "X-CSRFToken": "{{ csrf_token }}"
-                },
-                body: JSON.stringify(dataToSend)
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === "success") {
-                    alert(data.message);
-                    window.location.href = "{% url 'result_page' %}";
-                } else {
-                    alert("저장 실패 : " + data.message);
-                }
-            })
-            .catch(error => console.error("Error : ", error));
+            window.location.href = "{% url 'result_page' %}";
         }
+
         
         // 초기 데이터 가져오기
         getData();

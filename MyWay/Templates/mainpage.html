@@ -7,53 +7,122 @@
     <link rel="stylesheet" href="{% static 'css/mainpage.css' %}">
     <title>MyWay</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    </style>
 </head>
 
 <body>
-    <div class="logo-container">
-        <img src="{% static 'images/MyWay.png' %}" alt="">
+    <div class="logo-container" onclick="openMain()">
+        <img src="{% static 'images/MyWay.png' %}" alt="Logo">
     </div>
 
     <section class="search-container">
         <input type="text" name="query" id="search-bar" placeholder="나의 조합을 검색해 보세요!">
-        <img src="{% static 'images/search.png' %}" alt="">
+        <img src="{% static 'images/search.png' %}" alt="Search" onclick="searchCombination()">
     </section>
 
     <p class="recommend">유진님을 위한 <br> <span class="accent">추천 조합</span> 이에요!</p>
 
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">유진이의 조합</div>
-          <div class="swiper-slide">지은이의 조합</div>
-          <div class="swiper-slide">형주의 조합</div>
-          <div class="swiper-slide">예나의 조합</div>
-          <div class="swiper-slide">서연이의 조합</div>
-          <div class="swiper-slide">진현이의 조합</div>
-          <div class="swiper-slide">가현이의 조합</div>
-          <div class="swiper-slide">써브웨이 조합</div>
-          <div class="swiper-slide">요아정 조합</div>
+            {% for combination in combis %}
+            <div class="swiper-slide item" onclick="openPopup({{ combination.items|safe }}, '{{ combination.menu_name|escapejs }}')">
+                <p>{{ combination.menu_name|slice:":10" }}</p>
+                <img src="{{ combination.items.0.image }}" alt="{{ combination.menu_name }}">
+            </div>
+            {% endfor %}
         </div>
         <div class="swiper-scrollbar"></div>
-      </div>
+    </div>
 
-      <div class="Add-menu">나만의 메뉴를 추가할래요! 😉</div>
+    <div class="Add-menu" onclick="choicePage()">나만의 메뉴를 추가할래요! 😉</div>
 
-      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-      <script>
+    <!-- 팝업 -->
+    <div class="popup" id="popup" style="display: none;">
+        <div class="popup-content">
+            <div id="popup-items"></div>
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 2.2,
             spaceBetween: 10,
             loop: true,
-            // 가운데로 할지 왼쪽으로 할지 결정
-            // centeredSlides: true,
-          scrollbar: {
-            el: ".swiper-scrollbar",
-            hide: true,
-          },
+            scrollbar: {
+                el: ".swiper-scrollbar",
+                hide: true,
+            },
         });
-  </script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+        function searchCombination() {
+            const inputData = document.getElementById("search-bar").value;
+            // URL에 검색어를 쿼리 파라미터로 추가
+            const url = "{% url 'search_page' %}?search=" + encodeURIComponent(inputData);
+        
+            fetch(url, {
+                method: "GET",
+                headers: {
+                    "X-CSRFToken": "{{ csrf_token }}"  // CSRF 토큰이 필요한 경우만 추가
+                }
+            })
+            .then(response => response)  // 응답을 JSON으로 처리
+            .then(data => {
+                // 응답이 성공적일 경우 처리
+                window.location.href = url
+                console.log(data);  
+                // 검색 결과 페이지로 이동하거나 업데이트
+            })
+            .catch(error => {
+                console.log("Error:", error);
+            });
+        }
+        
+    
+        function openMain() {
+            window.location.href = "{% url 'main_page' %}";
+        }
+    
+        function choicePage() {
+            window.location.href = "{% url 'choice_page' %}";
+        }
+    
+        // 팝업 열기
+        function openPopup(items, menuName) {
+            const popupDiv = document.querySelector('.popup');
+            let popupItemsHTML = "";
+        
+            console.log(items);
+        
+            // 팝업에 menu_name 추가
+            popupItemsHTML += `
+                <div class="popupMenuName">
+                    <h2>${menuName}</h2>
+                </div>
+            `;
+        
+            // 아이템을 하나씩 팝업에 추가
+            items.forEach(item => {
+                popupItemsHTML += `
+                    <div class="popupItem">
+                        <img src="${item.image}" alt="${item.name}">
+                        <p>${item.name}</p>
+                    </div>
+                `;
+            });
+        
+            popupDiv.innerHTML = `
+                <button onclick="closePopup()">X</button>
+                ${popupItemsHTML}
+            `;
+            popupDiv.style.display = "grid"; // 팝업 보이기
+        }
+    
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+    
 </body>
 
 </html>

@@ -48,15 +48,25 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .item > img {
     width: 150px;
     height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.item > p {
+    white-space: break-spaces;
+    text-align: center;
+    word-break: keep-all;
 }
 
 .item:hover {
-    background-color: #FFBB10;
+    transform: scale(1.05);
 }
 
 button {
@@ -64,7 +74,7 @@ button {
     height: 50px;
     border: 0;
     border-radius: 20px;
-    background-color: red;
+    background-color: #FFBB10;
     font-size: 20px;
     margin-top: 10px;
 }
