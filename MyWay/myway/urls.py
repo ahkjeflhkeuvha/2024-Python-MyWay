@@ -24,19 +24,13 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path("main/", views.main_page, name="main_page"),
-    path("subway/", views.subway_page, name="subway_page"),  # 메인 페이지 URL 패턴
-    path("save_combination/", views.save_combination, name="save_combination"),  # 조합 저장 URL 패턴
-    path('admin/', admin.site.urls),
-    path('result/', views.result_page, name="result_page"),  # 결과 페이지 URL 패턴
-    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(), name="logout"),
-    path('signup/', views.signup, name="signup"),
-    path('mypage/', views.mypage, name="mypage"),
+    path('search/', views.search_page, name="search_page"),
     path('choice/', views.choice_page, name="choice_page"),
+    path("subway/", views.subway_page, name="subway_page"),  # 메인 페이지 URL 패턴
     path('yoajung/', views.yoajung_page, name="yoajung_page"),
     path('gongcha/', views.gongcha_page, name="gongcha_page"),
-    path('search/', views.search_page, name="search_page"),
-
-
+    path("save_combination/", views.save_combination, name="save_combination"),  # 조합 저장 URL 패턴
+    path('result/', views.result_page, name="result_page"),  # 결과 페이지 URL 패턴
+    path('mypage/', views.mypage, name="mypage"),
 ]
 
